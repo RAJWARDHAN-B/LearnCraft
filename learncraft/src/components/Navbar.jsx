@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "../assets/logo.svg";
+import logomain from "../assets/logomain.svg";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,7 +13,7 @@ const Navbar = () => {
     <nav className="w-full bg-white shadow-md">
       <div className="max-w-7xl mx-auto py-4 flex justify-between items-center">
         <div className="flex items-center gap-3">
-          <img src={logo} alt="Logo" className="h-20 w-20 object-contain" />
+          <img src={logomain} alt="Logo" className="h-16 w-80 object-contain" />
         </div>
 
         {/* Desktop Nav */}
