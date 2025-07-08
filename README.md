@@ -1,2 +1,2 @@
 # LearnCraft
-A platform for courses from ShivMala Infra Ltd.
+A platform for courses from LearnCraft Engineering and Consultant.
