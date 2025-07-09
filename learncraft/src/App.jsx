@@ -6,6 +6,8 @@ import HeroSection from "./pages/HeroSection";
 import CompanyLogos from "./pages/CompanyLogos";
 import TrainingObjectives from "./pages/TrainingObjectives";
 import Blogs from "./pages/Blogs";
+import PopularCourses from "./pages/PopularCourses";
+
 
 // Optional placeholder components for other routes
 const Courses = () => <div className="p-10 text-2xl">Courses Page</div>;
@@ -17,6 +19,7 @@ const Home = () => (
   <div>
     <HeroSection />
     <CompanyLogos />
+    <PopularCourses/>
     <TrainingObjectives />
   </div>
 );
