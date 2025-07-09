@@ -2,20 +2,25 @@ import React from 'react';
 
 const blogs = [
   {
+    id:"mike-norton",
     title: "Staying Relevant in Data Science: How Consistent Skill Growth Drives Mike Norton’s Success",
     desc: "After over 30 years in the telecom industry and a distinguished career as an officer in the Marine Corps, Mike Norton isn't slowing down...",
     img: "/images/mike-norton.jpg",
     large: true,
   },
   {
+    id: "kailey-chemistry-strategy",
     title: "From Chemistry to Strategy: How Ishpinder Kailey Used the iMBA to Expand Her Impact in STEM",
     img: "/images/chemistry-strategy.jpg",
   },
   {
+    id: "self-taught-dev",
     title: "Self-taught web developer proves that anything is possible",
     img: "/images/self-taught-dev.jpg",
   },
   {
+    id: "jeremy-data-science",
+    id: "journey-top",
     title: "Way to Top: A Journey Soo Unbelievable",
     img: "/images/journey-top.jpg",
   },
