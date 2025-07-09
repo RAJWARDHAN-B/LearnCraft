@@ -9,6 +9,7 @@ import { Star } from "lucide-react";
 import avatar1 from "../assets/avatar1.jpg";
 import avatar2 from "../assets/avatar2.jpg";
 import avatar3 from "../assets/avatar3.webp";
+import avatar4 from "../assets/avatar4.jpg";
 
 const testimonials = [
   {
@@ -35,6 +36,14 @@ const testimonials = [
     avatar: avatar3,
     stars: 5,
   },
+  {
+    name: "Amelia Rivera",
+    title: "Marketing Manager, BrightWave",
+    message:
+      "This platform has completely transformed the way we interact with our customers. Exceptional service and support!",
+    avatar: avatar4,
+    stars: 5,
+  },
 ];
 
 const Testimonials = () => {
@@ -53,10 +62,11 @@ const Testimonials = () => {
         }}
         loop={true}
         pagination={{ clickable: true }}
-        autoplay={{ delay: 3500 }}
+        autoplay={{ delay: 3500, disableOnInteraction: false }}
         modules={[Pagination, Autoplay]}
         className="testimonial-swiper"
       >
+
         {testimonials.map((item, idx) => (
           <SwiperSlide key={idx}>
             <div className="bg-white rounded-2xl shadow-lg p-6 relative">

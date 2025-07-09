@@ -28,7 +28,6 @@ const courses = [
     students: 130,
     image: digitalMarketing,
     bestSeller: true,
-    highlighted: true, // initially highlighted
   },
   {
     id: 3,
