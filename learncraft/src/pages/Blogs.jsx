@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Links} from "react-router-dom";
 const blogs = [
   {
     id:"mike-norton",
@@ -29,9 +29,6 @@ const blogs = [
     img: "/images/jeremy-samuel.jpg",
   },
 ];
-
-import { Link } from "react-router-dom";
-
 const BlogCard = ({ id, title, desc, img, large }) => (
   <div className={`rounded-xl bg-white shadow-md ${large ? "col-span-2 row-span-2 p-6" : "p-4"}`}>
     <img src={img} alt={title} className="rounded-xl w-full h-48 object-cover" />

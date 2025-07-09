@@ -7,7 +7,7 @@ import CompanyLogos from "./pages/CompanyLogos";
 import TrainingObjectives from "./pages/TrainingObjectives";
 import Blogs from "./pages/Blogs";
 import PopularCourses from "./pages/PopularCourses";
-import BlogDetail from "./pages/BlogDetail";
+import BlogDetail from "./pages/BlogsDetails";
 import Authors from "./pages/Authors";
 
 
