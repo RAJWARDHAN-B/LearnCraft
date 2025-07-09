@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 import logomain from "../assets/logomain.svg";
+import Blogs from "../pages/Blogs";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
