@@ -10,6 +10,7 @@ import PopularCourses from "./pages/PopularCourses";
 import BlogDetail from "./pages/BlogsDetails";
 import Authors from "./pages/Authors";
 import Testimonials from "./pages/Testimonials";
+import Footer from "./components/Footer";
 
 
 // Optional placeholder components for other routes
@@ -20,10 +21,11 @@ const Home = () => (
   <div>
     <HeroSection />
     <CompanyLogos />
-    <PopularCourses/>
-    <Authors/>
-    <Testimonials/>
+    <PopularCourses />
     <TrainingObjectives />
+    <Authors />
+    <Testimonials />
+    <Footer/>
   </div>
 );
 

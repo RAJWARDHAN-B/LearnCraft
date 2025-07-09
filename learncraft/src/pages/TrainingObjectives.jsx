@@ -1,7 +1,4 @@
 import React from "react";
-import img1 from "../assets/microsoft.svg"; // Replace with  actual image paths
-import img2 from "../assets/microsoft.svg";
-import img3 from "../assets/microsoft.svg";
 
 const TrainingObjectives = () => {
   return (
