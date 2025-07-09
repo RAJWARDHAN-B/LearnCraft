@@ -9,12 +9,12 @@ import Blogs from "./pages/Blogs";
 import PopularCourses from "./pages/PopularCourses";
 import BlogDetail from "./pages/BlogsDetails";
 import Authors from "./pages/Authors";
+import Testimonials from "./pages/Testimonials";
 
 
 // Optional placeholder components for other routes
 const Courses = () => <div className="p-10 text-2xl">Courses Page</div>;
 const Group = () => <div className="p-10 text-2xl">Group Page</div>;
-const Testimonial = () => <div className="p-10 text-2xl">Testimonial Page</div>;
 
 const Home = () => (
   <div>
@@ -22,6 +22,7 @@ const Home = () => (
     <CompanyLogos />
     <PopularCourses/>
     <Authors/>
+    <Testimonials/>
     <TrainingObjectives />
   </div>
 );
