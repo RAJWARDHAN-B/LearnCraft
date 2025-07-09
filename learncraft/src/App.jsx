@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HeroSection from "./pages/HeroSection";
 import CompanyLogos from "./pages/CompanyLogos";
-import TrainingObjectives from "./pages/TrainingObjectives";
+import TrainingSection from "./pages/TrainingSection";
 import Blogs from "./pages/Blogs";
 import PopularCourses from "./pages/PopularCourses";
 import BlogDetail from "./pages/BlogsDetails";
@@ -22,7 +22,7 @@ const Home = () => (
     <HeroSection />
     <CompanyLogos />
     <PopularCourses />
-    <TrainingObjectives />
+    <TrainingSection />
     <Authors />
     <Testimonials />
     <Footer/>
