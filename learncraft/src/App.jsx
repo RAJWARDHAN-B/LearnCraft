@@ -20,10 +20,10 @@ const Home = () => (
   <div>
     <HeroSection />
     <CompanyLogos />
-    <PopularCourses/>
-    <Authors/>
-    <Testimonials/>
+    <PopularCourses />
     <TrainingObjectives />
+    <Authors />
+    <Testimonials />
   </div>
 );
 

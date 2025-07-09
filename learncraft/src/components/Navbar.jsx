@@ -21,12 +21,10 @@ const Navbar = () => {
   return (
     <nav className="w-full bg-white shadow-md">
       <div className="max-w-7xl mx-auto py-4 flex justify-between items-center">
-        <div className="flex items-center gap-3">
-          <img src={logomain} alt="Logo" className="h-16 w-80 object-contain" />
-        </div>
+        <img src={logomain} alt="Logo" className="h-16 w-80 object-contain" />
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex gap-6 text-gray-700 font-medium">
+        <ul className="hidden md:flex gap-6 text-gray-700 font-medium mx-auto">
           {navLinks.map(({ name, path }, i) => (
             <li key={i}>
               <Link
@@ -44,16 +42,6 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Desktop Buttons */}
-        <div className="hidden md:flex gap-3">
-          <button className="bg-[#6C63FF] text-white px-6 py-2 rounded-full font-semibold hover:opacity-90 transition">
-            Sign In
-          </button>
-          <button className="bg-[#EAE6FF] text-[#6C63FF] px-6 py-2 rounded-full font-semibold hover:opacity-90 transition">
-            Sign Up
-          </button>
-        </div>
-
         {/* Mobile Menu Button */}
         <button onClick={toggleMenu} className="md:hidden">
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -62,7 +50,7 @@ const Navbar = () => {
 
       {/* Mobile Dropdown Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t px-4 pb-4 space-y-4">
+        <div className="md:hidden bg-white border-t px-4 pb-4 space-y-4 text-center">
           {navLinks.map(({ name, path }, i) => (
             <Link
               key={i}
@@ -73,14 +61,6 @@ const Navbar = () => {
               {name}
             </Link>
           ))}
-          <div className="flex flex-col gap-2 mt-4">
-            <button className="bg-[#6C63FF] text-white px-4 py-2 rounded-full font-semibold">
-              Sign In
-            </button>
-            <button className="bg-[#EAE6FF] text-[#6C63FF] px-4 py-2 rounded-full font-semibold">
-              Sign Up
-            </button>
-          </div>
         </div>
       )}
     </nav>
