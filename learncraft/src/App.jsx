@@ -7,11 +7,11 @@ import CompanyLogos from "./pages/CompanyLogos";
 import TrainingObjectives from "./pages/TrainingObjectives";
 import Blogs from "./pages/Blogs";
 import PopularCourses from "./pages/PopularCourses";
+import Authors from "./pages/Authors";
 
 
 // Optional placeholder components for other routes
 const Courses = () => <div className="p-10 text-2xl">Courses Page</div>;
-const Authors = () => <div className="p-10 text-2xl">Authors Page</div>;
 const Group = () => <div className="p-10 text-2xl">Group Page</div>;
 const Testimonial = () => <div className="p-10 text-2xl">Testimonial Page</div>;
 
@@ -20,6 +20,7 @@ const Home = () => (
     <HeroSection />
     <CompanyLogos />
     <PopularCourses/>
+    <Authors/>
     <TrainingObjectives />
   </div>
 );

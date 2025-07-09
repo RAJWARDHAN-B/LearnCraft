@@ -1,27 +1,27 @@
 import React from "react";
-import linkedinIcon from "../assets/linkedin.png";
-import author1 from "../assets/author1.jpg";
+import linkedinIcon from "../assets/linkedin.svg";
+import author1 from "../assets/author1.webp";
 import author2 from "../assets/author2.jpg";
 import author3 from "../assets/author3.jpg";
 
 const authors = [
   {
     id: 1,
-    name: "Shoo Thar Mien",
+    name: "Chris Hemsworth",
     title: "HR Manager",
     image: author1,
     linkedin: "#",
   },
   {
     id: 2,
-    name: "Shoo Thar Mien",
+    name: "Dakota Johnson",
     title: "Senior Designer",
     image: author2,
     linkedin: "#",
   },
   {
     id: 3,
-    name: "Shoo Thar Mien",
+    name: "Scarlett Johansson",
     title: "Data Analyst",
     image: author3,
     linkedin: "#",
@@ -34,7 +34,7 @@ const Authors = () => {
       <h2 className="text-3xl font-bold text-gray-800 mb-12">Meet our authors.</h2>
       <div className="flex flex-wrap justify-center gap-10">
         {authors.map((author) => (
-          <div key={author.id} className="flex flex-col items-center space-y-4">
+          <div key={author.id} className="flex flex-col items-center space-y-4 px-10">
             <div className="relative">
               <img
                 src={author.image}
