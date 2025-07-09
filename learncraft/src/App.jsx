@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import HeroSection from "./pages/HeroSection";
 import CompanyLogos from "./pages/CompanyLogos";
 import TrainingObjectives from "./pages/TrainingObjectives";
+import PopularCourses from "./pages/PopularCourses";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       {/* Other components/pages go here */}
       <HeroSection />
       <CompanyLogos/>
+      <PopularCourses/>
       <TrainingObjectives/>
     </div>
   );
