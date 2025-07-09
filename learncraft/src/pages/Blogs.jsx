@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link} from "react-router-dom";
 const blogs = [
   {
     id:"mike-norton",
@@ -19,27 +19,32 @@ const blogs = [
     img: "/images/self-taught-dev.jpg",
   },
   {
-    id: "jeremy-data-science",
     id: "journey-top",
     title: "Way to Top: A Journey Soo Unbelievable",
     img: "/images/journey-top.jpg",
   },
   {
+    id: "jeremy-data-science",
     title: "Mastering Data Science: Jeremy Samuel’s Journey with The University of Illinois",
     img: "/images/jeremy-samuel.jpg",
   },
 ];
 
-const BlogCard = ({ title, desc, img, large }) => (
+import { Link } from "react-router-dom";
+
+const BlogCard = ({ id, title, desc, img, large }) => (
   <div className={`rounded-xl bg-white shadow-md ${large ? "col-span-2 row-span-2 p-6" : "p-4"}`}>
     <img src={img} alt={title} className="rounded-xl w-full h-48 object-cover" />
     <h3 className="mt-4 font-semibold text-lg">{title}</h3>
     {desc && <p className="text-sm text-gray-600 mt-2">{desc}</p>}
-    <button className="mt-4 text-blue-600 font-medium hover:underline flex items-center gap-1">
-      Learn More <span>→</span>
-    </button>
+    <Link to={`/blog/${id}`}>
+      <button className="mt-4 text-blue-600 font-medium hover:underline flex items-center gap-1">
+        Learn More <span>→</span>
+      </button>
+    </Link>
   </div>
 );
+
 
 const Blogs = () => {
   return (
