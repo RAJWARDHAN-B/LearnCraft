@@ -7,6 +7,7 @@ import CompanyLogos from "./pages/CompanyLogos";
 import TrainingObjectives from "./pages/TrainingObjectives";
 import Blogs from "./pages/Blogs";
 import PopularCourses from "./pages/PopularCourses";
+import BlogDetail from "./pages/BlogDetail";
 import Authors from "./pages/Authors";
 
 
@@ -36,6 +37,7 @@ function App() {
         <Route path="/group" element={<Group />} />
         <Route path="/testimonial" element={<Testimonial />} />
         <Route path="/blog" element={<Blogs />} />
+        <Route path="/blog/:id" element={<BlogDetail />} />
       </Routes>
     </Router>
   );
