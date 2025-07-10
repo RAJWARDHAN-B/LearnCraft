@@ -12,10 +12,11 @@ import Authors from "./pages/Authors";
 import Testimonials from "./pages/Testimonials";
 import Footer from "./components/Footer";
 import CourseDetail from "./pages/CourseDetail";
+import MyLearning from "./pages/MyLearning";
 
 // Optional placeholder components for other routes
-const Courses = () => <div className="p-10 text-2xl">Courses Page</div>;
-const Group = () => <div className="p-10 text-2xl">Group Page</div>;
+const Courses = () => <div className="p-10 text-2xl">My Learning</div>;
+const MyLearning = () => <div className="p-10 text-2xl">Group Page</div>;
 
 const Home = () => (
   <div>
@@ -35,7 +36,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/courses" element={<Courses />} />
+        <Route path="/my-learning" element={<MyLearning />} />
         <Route path="/authors" element={<Authors />} />
         <Route path="/group" element={<Group />} />
         <Route path="/testimonials" element={<Testimonials />} />
