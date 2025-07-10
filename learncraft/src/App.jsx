@@ -25,7 +25,6 @@ const Home = () => (
     <TrainingSection />
     <Authors />
     <Testimonials />
-    <Footer/>
   </div>
 );
 
@@ -43,6 +42,7 @@ function App() {
         <Route path="/blog/:id" element={<BlogDetail />} />
         <Route path="/courses/:id" element={<CourseDetail />} />
       </Routes>
+      <Footer/>
     </Router>
   );
 }
