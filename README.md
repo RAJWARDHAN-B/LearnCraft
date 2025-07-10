@@ -33,3 +33,11 @@ The main goal is to provide a user-friendly platform where students and professi
 
 ---
 
+## 🌐 Live Demo
+
+Check out the live version here: [learncraft.in](https://learncrafttraining.in)
+## 🌍 Browser Support
+
+| Chrome | Firefox | Edge | Safari | Brave |
+|--------|---------|------|--------|-------|
+| ✅     | ✅     | ✅   | ✅    | ✅    |
