@@ -10,21 +10,21 @@ const authors = [
     name: "Chris Hemsworth",
     title: "HR Manager",
     image: author1,
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/rajwardhan-bhandigare/",
   },
   {
     id: 2,
     name: "Dakota Johnson",
     title: "Senior Designer",
     image: author2,
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/rajwardhan-bhandigare/",
   },
   {
     id: 3,
     name: "Scarlett Johansson",
     title: "Data Analyst",
     image: author3,
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/rajwardhan-bhandigare/",
   },
 ];
 

@@ -4,14 +4,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HeroSection from "./pages/HeroSection";
 import CompanyLogos from "./pages/CompanyLogos";
-import TrainingObjectives from "./pages/TrainingObjectives";
+import TrainingSection from "./pages/TrainingSection";
 import Blogs from "./pages/Blogs";
 import PopularCourses from "./pages/PopularCourses";
 import BlogDetail from "./pages/BlogsDetails";
 import Authors from "./pages/Authors";
 import Testimonials from "./pages/Testimonials";
-import CourseDetail from "./pages/CourseDetail"; // For dynamic course details
-
+import Footer from "./components/Footer";
+import CourseDetail from "./pages/CourseDetail";
 
 // Optional placeholder components for other routes
 const Courses = () => <div className="p-10 text-2xl">Courses Page</div>;
@@ -21,10 +21,11 @@ const Home = () => (
   <div>
     <HeroSection />
     <CompanyLogos />
-    <PopularCourses/>
-    <Authors/>
-    <Testimonials/>
-    <TrainingObjectives />
+    <PopularCourses />
+    <TrainingSection />
+    <Authors />
+    <Testimonials />
+    <Footer/>
   </div>
 );
 
