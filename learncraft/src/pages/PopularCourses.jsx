@@ -1,5 +1,6 @@
 import React from "react";
 import { Book, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 import dataScience from "../assets/data-science.jpg";
 import digitalMarketing from "../assets/digital-marketing.jpg";
 import civilEngineering from "../assets/civil-engineering.jpg";
@@ -52,7 +53,8 @@ const PopularCourses = () => {
 
       <div className="grid md:grid-cols-3 gap-8">
         {courses.map((course) => (
-          <div
+          <Link
+            to={`/courses/${course.id}`}
             key={course.id}
             className={`group bg-white rounded-2xl overflow-hidden relative transition duration-300 hover:scale-[1.02] hover:shadow-xl border-2 ${
               course.highlighted ? "border-indigo-500" : "border-transparent"
@@ -105,7 +107,7 @@ const PopularCourses = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
