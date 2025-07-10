@@ -15,8 +15,7 @@ import CourseDetail from "./pages/CourseDetail";
 import MyLearning from "./pages/MyLearning";
 
 // Optional placeholder components for other routes
-const Courses = () => <div className="p-10 text-2xl">My Learning</div>;
-const MyLearning = () => <div className="p-10 text-2xl">Group Page</div>;
+const Group = () => <div className="p-10 text-2xl">Group Page</div>;
 
 const Home = () => (
   <div>
