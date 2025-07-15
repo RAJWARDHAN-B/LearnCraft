@@ -3,7 +3,7 @@ import linkedinIcon from "../assets/linkedin.svg";
 import author1 from "../assets/author1.webp";
 import author2 from "../assets/author2.jpg";
 import author3 from "../assets/author3.jpg";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const authors = [
   {

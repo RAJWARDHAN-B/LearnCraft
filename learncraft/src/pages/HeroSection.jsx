@@ -1,7 +1,7 @@
 import React from "react";
 import { Search, CheckCircle } from "lucide-react";
 import heroImage from "../assets/hero.svg";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const HeroSection = () => {
   return (

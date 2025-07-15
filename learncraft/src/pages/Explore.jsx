@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Search, BarChart2, Megaphone, Building2, Code2, DollarSign, Palette } from "lucide-react";
 import PopularCourses from "./PopularCourses";
 import { useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const categories = [
   { name: "Data Science", icon: <BarChart2 size={32} className="text-blue-600" /> },

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Loader from "../components/Loader";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 // Sample content mapped by blog id
 const blogContent = {
