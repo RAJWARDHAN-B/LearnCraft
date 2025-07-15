@@ -35,6 +35,21 @@ const courses = [
   },
 ];
 
+// Helper to get course progress from localStorage
+const STORAGE_KEY = "learncraft_watched_videos";
+const COURSE_TOPICS = {
+  1: 6, // Data Science (from CourseDetail)
+  2: 6, // Digital Marketing (assume same for demo)
+  3: 6, // Civil Engineering (assume same for demo)
+};
+function getCourseProgress(courseId) {
+  const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+  const watched = data[courseId] || [];
+  const total = COURSE_TOPICS[courseId] || 1;
+  const percent = Math.round((watched.length / total) * 100);
+  return { percent, completed: watched.length === total };
+}
+
 const MyLearning = () => {
   const [openCourse, setOpenCourse] = useState(null);
 
@@ -50,38 +65,51 @@ const MyLearning = () => {
         {/* Course List */}
         <div className="lg:col-span-2 space-y-6">
           <div className="bg-white shadow-sm rounded-xl border p-4 space-y-4">
-            {courses.map((course) => (
-              <div
-                key={course.id}
-                className="flex items-start justify-between border-b pb-4 last:border-b-0 last:pb-0"
-              >
-                <div className="flex items-start gap-4">
-                  <img
-                    src={course.image}
-                    alt={course.title}
-                    className="w-14 h-14 rounded object-cover"
-                  />
-                  <div>
-                    <h3 className="font-semibold underline">{course.title}</h3>
-                    <p className="text-sm text-gray-500">{course.subtitle}</p>
-                  </div>
-                </div>
-                <button
-                  onClick={() => toggleCourse(course.id)}
-                  className="text-blue-600 font-medium flex items-center gap-1"
+            {courses.map((course) => {
+              const { percent, completed } = getCourseProgress(course.id);
+              return (
+                <div
+                  key={course.id}
+                  className="flex items-start justify-between border-b pb-4 last:border-b-0 last:pb-0"
                 >
-                  {openCourse === course.id ? (
-                    <>
-                      Course details <ChevronUp size={16} />
-                    </>
-                  ) : (
-                    <>
-                      Course details <ChevronDown size={16} />
-                    </>
-                  )}
-                </button>
-              </div>
-            ))}
+                  <div className="flex items-start gap-4">
+                    <img
+                      src={course.image}
+                      alt={course.title}
+                      className="w-14 h-14 rounded object-cover"
+                    />
+                    <div>
+                      <h3 className="font-semibold underline flex items-center gap-2">{course.title} {completed && <span className='bg-green-600 text-white text-xs px-2 py-1 rounded-full font-semibold shadow'>COMPLETED</span>}</h3>
+                      <p className="text-sm text-gray-500">{course.subtitle}</p>
+                      {/* Progress Bar */}
+                      <div className="mt-2">
+                        <div className="w-40 h-2 bg-blue-100 rounded-full overflow-hidden">
+                          <div
+                            className="h-2 bg-blue-500 rounded-full transition-all duration-300"
+                            style={{ width: `${percent}%` }}
+                          ></div>
+                        </div>
+                        <div className="text-xs text-blue-700 mt-1">{percent}%</div>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => toggleCourse(course.id)}
+                    className="text-blue-600 font-medium flex items-center gap-1"
+                  >
+                    {openCourse === course.id ? (
+                      <>
+                        Course details <ChevronUp size={16} />
+                      </>
+                    ) : (
+                      <>
+                        Course details <ChevronDown size={16} />
+                      </>
+                    )}
+                  </button>
+                </div>
+              );
+            })}
           </div>
         </div>
 

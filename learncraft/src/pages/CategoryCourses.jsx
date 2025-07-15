@@ -53,6 +53,21 @@ const DEFAULT_IMAGE = "https://farm3.staticflickr.com/2936/14765026726_b8a02d398
 
 const unslugify = (slug) => slug.replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase());
 
+// Helper to get course progress from localStorage
+const STORAGE_KEY = "learncraft_watched_videos";
+const COURSE_TOPICS = {
+  1: 6, // Data Science (from CourseDetail)
+  2: 6, // Digital Marketing (assume same for demo)
+  3: 6, // Civil Engineering (assume same for demo)
+};
+function getCourseProgress(courseId) {
+  const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+  const watched = data[courseId] || [];
+  const total = COURSE_TOPICS[courseId] || 1;
+  const percent = Math.round((watched.length / total) * 100);
+  return { percent, completed: watched.length === total };
+}
+
 const CategoryCourses = () => {
   const { categoryName } = useParams();
   const [loading, setLoading] = useState(true);
@@ -78,55 +93,71 @@ const CategoryCourses = () => {
           <div className="text-center text-lg text-gray-500">No courses found in this category.</div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8">
-            {filteredCourses.map((course) => (
-              <Link
-                to={`/courses/${course.id}`}
-                key={course.id}
-                className="group bg-white rounded-2xl overflow-hidden relative transition duration-300 hover:scale-[1.02] hover:shadow-xl border-2 hover:border-indigo-500 p-2 sm:p-0"
-              >
-                <div className="relative">
-                  <img
-                    src={DEFAULT_IMAGE}
-                    alt={course.title}
-                    className="w-full h-40 sm:h-48 object-cover"
-                    loading="lazy"
-                  />
-                  {course.bestSeller && (
-                    <span className="absolute bottom-2 right-2 bg-indigo-700 text-white text-xs px-2 sm:px-3 py-1 rounded-full font-semibold">
-                      BEST SELLER
-                    </span>
-                  )}
-                </div>
-                <div className="p-3 sm:p-5">
-                  <h3 className="text-base sm:text-lg font-semibold">{course.title}</h3>
-                  <p className="text-xs sm:text-sm text-gray-500 mb-2">{course.author}</p>
-                  <div className="flex items-center justify-between mb-2 sm:mb-4">
-                    <div className="flex items-center gap-1 text-xs sm:text-sm">
-                      <span className="text-red-600 font-semibold">{course.rating}</span>
-                      {[...Array(5)].map((_, i) => (
-                        <span
-                          key={i}
-                          className={`text-yellow-400 ${i < Math.round(course.reviews) ? "opacity-100" : "opacity-40"}`}
-                        >
-                          ★
-                        </span>
-                      ))}
-                    </div>
-                    <p className="text-xs sm:text-md font-semibold text-gray-800">${course.price}</p>
+            {filteredCourses.map((course) => {
+              const { percent, completed } = getCourseProgress(course.id);
+              return (
+                <Link
+                  to={`/courses/${course.id}`}
+                  key={course.id}
+                  className="group bg-white rounded-2xl overflow-hidden relative transition duration-300 hover:scale-[1.02] hover:shadow-xl border-2 hover:border-indigo-500 p-2 sm:p-0"
+                >
+                  <div className="relative">
+                    <img
+                      src={DEFAULT_IMAGE}
+                      alt={course.title}
+                      className="w-full h-40 sm:h-48 object-cover"
+                      loading="lazy"
+                    />
+                    {course.bestSeller && (
+                      <span className="absolute bottom-2 right-2 bg-indigo-700 text-white text-xs px-2 sm:px-3 py-1 rounded-full font-semibold">
+                        BEST SELLER
+                      </span>
+                    )}
+                    {completed && (
+                      <span className="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 rounded-full font-semibold shadow">COMPLETED</span>
+                    )}
                   </div>
-                  <div className="border-t pt-2 sm:pt-3 flex justify-between text-xs sm:text-sm text-gray-500">
-                    <div className="flex items-center gap-1">
-                      <Book size={14} className="sm:w-4 sm:h-4" />
-                      {course.classes} classes
+                  <div className="p-3 sm:p-5">
+                    <h3 className="text-base sm:text-lg font-semibold">{course.title}</h3>
+                    <p className="text-xs sm:text-sm text-gray-500 mb-2">{course.author}</p>
+                    {/* Progress Bar */}
+                    <div className="mb-2">
+                      <div className="w-full h-2 bg-blue-100 rounded-full overflow-hidden">
+                        <div
+                          className="h-2 bg-blue-500 rounded-full transition-all duration-300"
+                          style={{ width: `${percent}%` }}
+                        ></div>
+                      </div>
+                      <div className="text-xs text-right text-blue-700 mt-1">{percent}%</div>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <Users size={14} className="sm:w-4 sm:h-4" />
-                      {course.students} students
+                    <div className="flex items-center justify-between mb-2 sm:mb-4">
+                      <div className="flex items-center gap-1 text-xs sm:text-sm">
+                        <span className="text-red-600 font-semibold">{course.rating}</span>
+                        {[...Array(5)].map((_, i) => (
+                          <span
+                            key={i}
+                            className={`text-yellow-400 ${i < Math.round(course.reviews) ? "opacity-100" : "opacity-40"}`}
+                          >
+                            ★
+                          </span>
+                        ))}
+                      </div>
+                      <p className="text-xs sm:text-md font-semibold text-gray-800">${course.price}</p>
+                    </div>
+                    <div className="border-t pt-2 sm:pt-3 flex justify-between text-xs sm:text-sm text-gray-500">
+                      <div className="flex items-center gap-1">
+                        <Book size={14} className="sm:w-4 sm:h-4" />
+                        {course.classes} classes
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Users size={14} className="sm:w-4 sm:h-4" />
+                        {course.students} students
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              );
+            })}
           </div>
         )}
       </div>
