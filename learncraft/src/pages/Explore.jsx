@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Search, BarChart2, Megaphone, Building2, Code2, DollarSign, Palette } from "lucide-react";
 import PopularCourses from "./PopularCourses";
+import { useNavigate } from "react-router-dom";
 
 const categories = [
   { name: "Data Science", icon: <BarChart2 size={32} className="text-blue-600" /> },
@@ -12,7 +13,11 @@ const categories = [
   { name: "Design", icon: <Palette size={32} className="text-purple-600" /> },
 ];
 
+const slugify = (str) => str.toLowerCase().replace(/ /g, "-");
+
 const Explore = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-[#f5f9ff] pb-12">
       {/* Hero/Search Section */}
@@ -67,6 +72,9 @@ const Explore = () => {
               key={cat.name}
               whileHover={{ scale: 1.08 }}
               className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center cursor-pointer hover:bg-blue-50 transition"
+              onClick={() => navigate(`/category/${slugify(cat.name)}`)}
+              role="button"
+              tabIndex={0}
             >
               <span className="mb-2">{cat.icon}</span>
               <span className="font-semibold text-gray-800 text-center text-sm">{cat.name}</span>

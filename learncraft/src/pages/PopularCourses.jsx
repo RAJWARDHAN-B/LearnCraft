@@ -5,6 +5,8 @@ import dataScience from "../assets/data-science.jpg";
 import digitalMarketing from "../assets/digital-marketing.jpg";
 import civilEngineering from "../assets/civil-engineering.jpg";
 
+const DEFAULT_IMAGE = "https://farm3.staticflickr.com/2936/14765026726_b8a02d3989.jpg";
+
 const courses = [
   {
     id: 1,
@@ -62,7 +64,7 @@ const PopularCourses = () => {
           >
             <div className="relative">
               <img
-                src={course.image}
+                src={DEFAULT_IMAGE}
                 alt={course.title}
                 className="w-full h-48 object-cover"
               />

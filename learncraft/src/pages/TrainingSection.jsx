@@ -16,17 +16,17 @@ const TrainingSection = () => {
           {/* Image Group */}
           <div className="flex flex-col items-center lg:items-start gap-6 relative lg:gap-0 lg:space-y-20">
             <img
-              src="https://images.unsplash.com/photo-1599658880436-c61792e70672?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="https://farm3.staticflickr.com/2936/14765026726_b8a02d3989.jpg"
               alt="Training 1"
               className="w-64 md:w-72 lg:w-80 rounded-xl shadow-md z-10"
             />
             <img
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="https://farm3.staticflickr.com/2936/14765026726_b8a02d3989.jpg"
               alt="Training 2"
               className="w-64 md:w-72 lg:w-80 rounded-xl shadow-md z-20 lg:-mt-24 lg:ml-32"
             />
             <img
-              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="https://farm3.staticflickr.com/2936/14765026726_b8a02d3989.jpg"
               alt="Training 3"
               className="w-64 md:w-72 lg:w-80 rounded-xl shadow-md z-10 lg:-mt-24"
             />

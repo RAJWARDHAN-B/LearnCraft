@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
+const DEFAULT_IMAGE = "https://farm3.staticflickr.com/2936/14765026726_b8a02d3989.jpg";
+
 const blogs = [
   {
     id: "mike-norton",
@@ -38,7 +40,7 @@ const BlogCard = ({ id, title, desc, img, large }) => (
     }`}
   >
     <img
-      src={img}
+      src={DEFAULT_IMAGE}
       alt={title}
       className="rounded-xl w-full h-48 sm:h-56 md:h-64 object-cover"
     />

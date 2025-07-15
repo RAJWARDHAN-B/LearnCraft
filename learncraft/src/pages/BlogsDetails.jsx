@@ -73,6 +73,8 @@ const blogContent = {
   },
 };
 
+const DEFAULT_IMAGE = "https://farm3.staticflickr.com/2936/14765026726_b8a02d3989.jpg";
+
 const BlogDetail = () => {
   const { id } = useParams();
   const blog = blogContent[id];
@@ -82,7 +84,7 @@ const BlogDetail = () => {
   return (
     <div className="px-4 sm:px-6 md:px-10 py-6 max-w-5xl mx-auto">
       <img
-        src={blog.img}
+        src={DEFAULT_IMAGE}
         alt={blog.title}
         className="w-full h-auto object-cover rounded-xl mb-6 max-h-[400px]"
       />
