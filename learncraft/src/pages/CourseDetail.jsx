@@ -40,20 +40,21 @@ const CourseDetail = () => {
   if (!course) return <div className="p-10 text-xl">Course not found.</div>;
 
   return (
-    <div className="min-h-screen bg-[#f5f9ff] flex flex-col md:flex-row">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 flex flex-col md:flex-row">
       {/* Sidebar */}
-      <aside className="w-full md:w-80 bg-white border-r border-gray-200 p-4 md:p-6 flex-shrink-0">
-        <h2 className="text-xl font-bold mb-6 text-gray-800">Course Content</h2>
+      <aside className="w-full md:w-80 bg-white/90 border-r border-gray-200 p-4 md:p-8 flex-shrink-0 shadow-md md:rounded-tr-3xl md:rounded-br-3xl">
+        <h2 className="text-xl font-bold mb-6 text-blue-800 tracking-tight">Course Content</h2>
         <ul className="space-y-2">
           {course.courseList.map((c, idx) => (
             <li
               key={idx}
               className={`rounded-lg px-4 py-3 cursor-pointer flex items-center justify-between transition font-medium text-sm md:text-base
-                ${selectedIdx === idx ? "bg-blue-100 text-blue-700" : "hover:bg-gray-100 text-gray-700"}`}
+                ${selectedIdx === idx ? "bg-blue-600 text-white shadow-lg" : "hover:bg-blue-100 text-blue-900"}`}
               onClick={() => setSelectedIdx(idx)}
+              style={{ boxShadow: selectedIdx === idx ? '0 2px 12px 0 rgba(59,130,246,0.15)' : undefined }}
             >
-              <span>{c.name}</span>
-              <span className="text-xs text-gray-400 ml-2">{c.hours} hrs</span>
+              <span className="truncate max-w-[140px]">{c.name}</span>
+              <span className="text-xs text-blue-200 ml-2">{c.hours} hrs</span>
             </li>
           ))}
         </ul>
@@ -62,40 +63,34 @@ const CourseDetail = () => {
       {/* Main Content */}
       <main className="flex-1 p-4 md:p-10 flex flex-col items-center">
         <div className="w-full max-w-4xl">
-          <img src={DEFAULT_IMAGE} alt={course.title} className="w-full h-48 object-cover rounded-xl mb-4 hidden md:block" />
-          <h1 className="text-3xl md:text-4xl font-bold mb-2">{course.title}</h1>
-          <p className="text-gray-600 mb-4">{course.description}</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-gray-100 p-4 rounded-xl mb-6 text-center text-sm">
-            <div><strong>Level:</strong><br />{course.level}</div>
-            <div><strong>Rating:</strong><br />{course.rating} ({course.reviews} reviews)</div>
-            <div><strong>Duration:</strong><br />{course.duration}</div>
-            <div><strong>Next Batch:</strong><br />{course.startDate}</div>
-          </div>
+          {/* Removed the top card section with image, title, description, and info cards */}
         </div>
         {/* Video Player */}
-        <div className="w-full max-w-4xl aspect-w-16 aspect-h-9 mb-6 rounded-xl overflow-hidden shadow-lg bg-black">
+        <div className="w-full max-w-4xl aspect-w-16 aspect-h-9 mb-6 rounded-3xl overflow-hidden shadow-2xl bg-black border-4 border-blue-200">
           <iframe
             src={YOUTUBE_PLACEHOLDER}
             title={course.courseList[selectedIdx].name}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             className="w-full h-full min-h-[220px] md:min-h-[400px]"
+            style={{ borderRadius: '1.5rem' }}
           ></iframe>
         </div>
-        <div className="w-full max-w-4xl bg-white rounded-xl shadow p-6 mb-8">
-          <h2 className="text-xl font-semibold mb-2">{course.courseList[selectedIdx].name}</h2>
-          <span className="text-gray-500 text-sm">{course.courseList[selectedIdx].hours} hrs</span>
-        </div>
-        {/* Skills and Salary Section */}
-        <div className="w-full max-w-4xl">
-          <h2 className="text-2xl font-semibold mb-2">Skills you'll gain</h2>
-          <div className="flex flex-wrap gap-2 mb-6">
+        <div className="w-full max-w-4xl bg-white/90 rounded-2xl shadow p-6 mb-8 flex flex-col md:flex-row md:items-center md:justify-between">
+          <div>
+            <h2 className="text-xl font-semibold mb-1 text-blue-800">{course.courseList[selectedIdx].name}</h2>
+            <span className="text-blue-500 text-sm">{course.courseList[selectedIdx].hours} hrs</span>
+          </div>
+          <div className="mt-4 md:mt-0 flex flex-wrap gap-2">
             {course.skills.map(skill => (
-              <span key={skill} className="bg-gray-200 px-3 py-1 rounded-full text-sm">{skill}</span>
+              <span key={skill} className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium shadow-sm">{skill}</span>
             ))}
           </div>
-          <div className="bg-blue-100 mt-4 p-4 rounded-xl text-center text-lg">
-            Median salary: <strong>{course.salary}</strong> | Job Openings: <strong>{course.jobs}</strong>
+        </div>
+        {/* Salary Section */}
+        <div className="w-full max-w-4xl">
+          <div className="bg-gradient-to-r from-blue-100 to-blue-200 mt-4 p-6 rounded-2xl text-center text-lg font-semibold text-blue-900 shadow">
+            Median salary: <span className="font-bold">{course.salary}</span> &nbsp;|&nbsp; Job Openings: <span className="font-bold">{course.jobs}</span>
           </div>
         </div>
       </main>
