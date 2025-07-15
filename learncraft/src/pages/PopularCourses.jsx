@@ -68,7 +68,7 @@ const PopularCourses = () => {
         Popular courses.
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8">
+      <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6 md:gap-8">
         {courses.map((course) => {
           const { percent, completed } = getCourseProgress(course.id);
           return (
@@ -81,7 +81,7 @@ const PopularCourses = () => {
                 <img
                   src={DEFAULT_IMAGE}
                   alt={course.title}
-                  className="w-full h-40 sm:h-48 object-cover"
+                  className="w-full h-36 xs:h-40 sm:h-48 object-cover transition-all duration-200"
                   loading="lazy"
                 />
                 {course.bestSeller && (
@@ -93,8 +93,8 @@ const PopularCourses = () => {
                   <span className="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 rounded-full font-semibold shadow">COMPLETED</span>
                 )}
               </div>
-              <div className="p-3 sm:p-5">
-                <h3 className="text-base sm:text-lg font-semibold">{course.title}</h3>
+              <div className="p-2 xs:p-3 sm:p-5">
+                <h3 className="text-sm xs:text-base sm:text-lg font-semibold">{course.title}</h3>
                 <p className="text-xs sm:text-sm text-gray-500 mb-2">{course.author}</p>
                 {/* Progress Bar */}
                 <div className="mb-2">

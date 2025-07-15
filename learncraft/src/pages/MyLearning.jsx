@@ -58,13 +58,13 @@ const MyLearning = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12">
-      <h2 className="text-3xl font-bold mb-8">My Learning</h2>
+    <div className="max-w-7xl mx-auto px-2 xs:px-4 py-8 xs:py-12">
+      <h2 className="text-2xl xs:text-3xl font-bold mb-6 xs:mb-8">My Learning</h2>
 
-      <div className="grid lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 xs:gap-8">
         {/* Course List */}
-        <div className="lg:col-span-2 space-y-6">
-          <div className="bg-white shadow-sm rounded-xl border p-4 space-y-4">
+        <div className="lg:col-span-2 space-y-4 xs:space-y-6">
+          <div className="bg-white shadow-sm rounded-xl border p-2 xs:p-4 space-y-3 xs:space-y-4">
             {courses.map((course) => {
               const { percent, completed } = getCourseProgress(course.id);
               return (
@@ -76,14 +76,14 @@ const MyLearning = () => {
                     <img
                       src={course.image}
                       alt={course.title}
-                      className="w-14 h-14 rounded object-cover"
+                      className="w-12 xs:w-14 h-12 xs:h-14 rounded object-cover"
                     />
                     <div>
-                      <h3 className="font-semibold underline flex items-center gap-2">{course.title} {completed && <span className='bg-green-600 text-white text-xs px-2 py-1 rounded-full font-semibold shadow'>COMPLETED</span>}</h3>
-                      <p className="text-sm text-gray-500">{course.subtitle}</p>
+                      <h3 className="font-semibold underline flex items-center gap-2 text-sm xs:text-base">{course.title} {completed && <span className='bg-green-600 text-white text-xs px-2 py-1 rounded-full font-semibold shadow'>COMPLETED</span>}</h3>
+                      <p className="text-xs xs:text-sm text-gray-500">{course.subtitle}</p>
                       {/* Progress Bar */}
-                      <div className="mt-2">
-                        <div className="w-40 h-2 bg-blue-100 rounded-full overflow-hidden">
+                      <div className="mt-1 xs:mt-2">
+                        <div className="w-32 xs:w-40 h-2 bg-blue-100 rounded-full overflow-hidden">
                           <div
                             className="h-2 bg-blue-500 rounded-full transition-all duration-300"
                             style={{ width: `${percent}%` }}
