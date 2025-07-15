@@ -76,19 +76,29 @@ const CourseDetail = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 flex flex-col md:flex-row">
       {/* Sidebar (collapsible on mobile) */}
       <button
-        className="md:hidden fixed top-20 left-4 z-30 bg-blue-600 text-white p-2 rounded-full shadow-lg focus:outline-none"
+        className="md:hidden fixed top-4 left-4 z-30 bg-blue-600 text-white p-2 rounded-full shadow-lg focus:outline-none"
         onClick={() => setSidebarOpen((open) => !open)}
         aria-label="Toggle sidebar"
+        style={{ top: '1.5rem' }}
       >
         <Menu size={24} />
       </button>
       <aside
-        className={`fixed md:static top-0 left-0 h-full md:h-auto w-72 md:w-80 bg-white/90 dark:bg-gray-800/90 border-r border-gray-200 dark:border-gray-700 p-4 md:p-8 flex-shrink-0 shadow-md md:rounded-tr-3xl md:rounded-br-3xl z-20 transition-transform duration-300 md:translate-x-0 ${
+        className={`fixed md:static top-0 left-0 h-full md:h-auto w-4/5 max-w-xs md:w-80 bg-white/95 dark:bg-gray-800/95 border-r border-gray-200 dark:border-gray-700 p-4 md:p-8 flex-shrink-0 shadow-md md:rounded-tr-3xl md:rounded-br-3xl z-20 transition-transform duration-300 md:translate-x-0 ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
         }`}
         style={{ maxHeight: '100vh', overflowY: 'auto' }}
       >
-        <h2 className="text-xl font-bold mb-6 text-blue-800 dark:text-yellow-300 tracking-tight">Course Content</h2>
+        <div className="flex items-center justify-between mb-4 md:mb-6">
+          <h2 className="text-xl font-bold text-blue-800 dark:text-yellow-300 tracking-tight">Course Content</h2>
+          <button
+            className="md:hidden text-gray-700 dark:text-gray-200 p-1 rounded hover:bg-blue-100 dark:hover:bg-gray-700"
+            onClick={() => setSidebarOpen(false)}
+            aria-label="Close sidebar"
+          >
+            ✕
+          </button>
+        </div>
         {/* Progress Bar */}
         <div className="mb-6">
           <div className="flex justify-between items-center mb-1 text-xs font-semibold text-blue-700 dark:text-yellow-300">
@@ -106,7 +116,7 @@ const CourseDetail = () => {
           {course.courseList.map((c, idx) => (
             <li
               key={idx}
-              className={`rounded-lg px-4 py-3 cursor-pointer flex items-center justify-between transition font-medium text-sm md:text-base
+              className={`rounded-lg px-3 py-3 cursor-pointer flex items-center justify-between transition font-medium text-xs sm:text-sm md:text-base
                 ${selectedIdx === idx ? "bg-blue-600 dark:bg-yellow-400 text-white dark:text-gray-900 shadow-lg" : "hover:bg-blue-100 dark:hover:bg-gray-700 text-blue-900 dark:text-gray-200"}`}
               onClick={() => {
                 setSelectedIdx(idx);
@@ -114,7 +124,7 @@ const CourseDetail = () => {
               }}
               style={{ boxShadow: selectedIdx === idx ? '0 2px 12px 0 rgba(59,130,246,0.15)' : undefined }}
             >
-              <span className="truncate max-w-[140px] flex items-center gap-2">
+              <span className="truncate max-w-[110px] sm:max-w-[140px] flex items-center gap-2">
                 {c.name}
                 {watched.includes(idx) && <CheckCircle size={16} className="text-green-500" />}
               </span>
@@ -127,7 +137,7 @@ const CourseDetail = () => {
       {/* Overlay for mobile sidebar */}
       {sidebarOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-30 z-10 md:hidden"
+          className="fixed inset-0 bg-black bg-opacity-40 z-10 md:hidden"
           onClick={() => setSidebarOpen(false)}
           aria-label="Close sidebar"
         ></div>
@@ -139,30 +149,31 @@ const CourseDetail = () => {
           {/* Removed the top card section with image, title, description, and info cards */}
         </div>
         {/* Video Player */}
-        <div className="w-full max-w-4xl aspect-w-16 aspect-h-9 mb-6 rounded-3xl overflow-hidden shadow-2xl bg-black border-4 border-blue-200 dark:border-yellow-400">
+        <div className="w-full max-w-4xl aspect-w-16 aspect-h-9 mb-6 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl bg-black border-2 sm:border-4 border-blue-200 dark:border-yellow-400"
+          style={{ minHeight: '180px', maxHeight: '60vw', height: 'auto' }}>
           <iframe
             src={YOUTUBE_PLACEHOLDER}
             title={course.courseList[selectedIdx].name}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             className="w-full h-full min-h-[180px] sm:min-h-[220px] md:min-h-[400px]"
-            style={{ borderRadius: '1.5rem' }}
+            style={{ borderRadius: '1.25rem' }}
           ></iframe>
         </div>
-        <div className="w-full max-w-4xl bg-white/90 dark:bg-gray-800/90 rounded-2xl shadow p-4 sm:p-6 mb-8 flex flex-col md:flex-row md:items-center md:justify-between">
+        <div className="w-full max-w-4xl bg-white/90 dark:bg-gray-800/90 rounded-2xl shadow p-3 sm:p-6 mb-8 flex flex-col md:flex-row md:items-center md:justify-between gap-2 md:gap-0">
           <div>
-            <h2 className="text-lg sm:text-xl font-semibold mb-1 text-blue-800 dark:text-yellow-300">{course.courseList[selectedIdx].name}</h2>
-            <span className="text-blue-500 dark:text-yellow-300 text-sm">{course.courseList[selectedIdx].hours} hrs</span>
+            <h2 className="text-base sm:text-lg md:text-xl font-semibold mb-1 text-blue-800 dark:text-yellow-300">{course.courseList[selectedIdx].name}</h2>
+            <span className="text-blue-500 dark:text-yellow-300 text-xs sm:text-sm">{course.courseList[selectedIdx].hours} hrs</span>
           </div>
-          <div className="mt-4 md:mt-0 flex flex-wrap gap-2">
+          <div className="mt-2 md:mt-0 flex flex-wrap gap-2">
             {course.skills.map(skill => (
-              <span key={skill} className="bg-blue-100 dark:bg-gray-700 text-blue-700 dark:text-yellow-200 px-3 py-1 rounded-full text-xs font-medium shadow-sm">{skill}</span>
+              <span key={skill} className="bg-blue-100 dark:bg-gray-700 text-blue-700 dark:text-yellow-200 px-2 sm:px-3 py-1 rounded-full text-xs font-medium shadow-sm">{skill}</span>
             ))}
           </div>
         </div>
         {/* Salary Section */}
         <div className="w-full max-w-4xl">
-          <div className="bg-gradient-to-r from-blue-100 to-blue-200 dark:from-gray-800 dark:to-gray-900 mt-4 p-4 sm:p-6 rounded-2xl text-center text-md sm:text-lg font-semibold text-blue-900 dark:text-yellow-200 shadow">
+          <div className="bg-gradient-to-r from-blue-100 to-blue-200 dark:from-gray-800 dark:to-gray-900 mt-4 p-3 sm:p-6 rounded-2xl text-center text-sm sm:text-lg font-semibold text-blue-900 dark:text-yellow-200 shadow">
             Median salary: <span className="font-bold">{course.salary}</span> &nbsp;|&nbsp; Job Openings: <span className="font-bold">{course.jobs}</span>
           </div>
         </div>
