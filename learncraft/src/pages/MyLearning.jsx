@@ -71,8 +71,6 @@ const MyLearning = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 xs:gap-8">
           {/* Course List */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 xs:gap-8">
-        {/* Course List */}
         <div className="lg:col-span-2 space-y-4 xs:space-y-6">
           <div className="bg-white shadow-sm rounded-xl border p-2 xs:p-4 space-y-3 xs:space-y-4">
             {courses.map((course) => {
