@@ -1,15 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Search } from "lucide-react";
+import { Search, BarChart2, Megaphone, Building2, Code2, DollarSign, Palette } from "lucide-react";
 import PopularCourses from "./PopularCourses";
 
 const categories = [
-  { name: "Data Science", icon: "📊" },
-  { name: "Digital Marketing", icon: "💡" },
-  { name: "Civil Engineering", icon: "🏗️" },
-  { name: "Programming", icon: "💻" },
-  { name: "Finance", icon: "💰" },
-  { name: "Design", icon: "🎨" },
+  { name: "Data Science", icon: <BarChart2 size={32} className="text-blue-600" /> },
+  { name: "Digital Marketing", icon: <Megaphone size={32} className="text-pink-500" /> },
+  { name: "Civil Engineering", icon: <Building2 size={32} className="text-yellow-600" /> },
+  { name: "Programming", icon: <Code2 size={32} className="text-green-600" /> },
+  { name: "Finance", icon: <DollarSign size={32} className="text-emerald-600" /> },
+  { name: "Design", icon: <Palette size={32} className="text-purple-600" /> },
 ];
 
 const Explore = () => {
@@ -68,7 +68,7 @@ const Explore = () => {
               whileHover={{ scale: 1.08 }}
               className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center justify-center cursor-pointer hover:bg-blue-50 transition"
             >
-              <span className="text-3xl mb-2">{cat.icon}</span>
+              <span className="mb-2">{cat.icon}</span>
               <span className="font-semibold text-gray-800 text-center text-sm">{cat.name}</span>
             </motion.div>
           ))}
