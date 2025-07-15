@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import logomain from "../assets/logomain.svg";
+import { useTheme } from "../ThemeContext";
 
 const Navbar = () => {
+  const { theme, toggleTheme } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const location = useLocation();
@@ -89,6 +91,10 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button onClick={toggleMenu} className="md:hidden ml-2">
             {menuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+
+          <button onClick={toggleTheme}>
+            {theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
           </button>
         </div>
 
