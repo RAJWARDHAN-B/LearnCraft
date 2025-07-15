@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Loader from "../components/Loader";
 
 const courseData = {
   1: {
@@ -33,10 +34,18 @@ const YOUTUBE_PLACEHOLDER = "https://www.youtube.com/embed/dQw4w9WgXcQ?si=czLfRn
 
 const CourseDetail = () => {
   const { id } = useParams();
-  const course = courseData[id];
+  const [loading, setLoading] = useState(true);
   const [selectedIdx, setSelectedIdx] = useState(0);
   const DEFAULT_IMAGE = "https://farm3.staticflickr.com/2936/14765026726_b8a02d3989.jpg";
+  const course = courseData[id];
 
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => setLoading(false), 700);
+    return () => clearTimeout(timer);
+  }, [id]);
+
+  if (loading) return <Loader />;
   if (!course) return <div className="p-10 text-xl">Course not found.</div>;
 
   return (

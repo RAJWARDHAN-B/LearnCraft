@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import Loader from "../components/Loader";
 import { Book, Users } from "lucide-react";
 import dataScience from "../assets/data-science.jpg";
 import digitalMarketing from "../assets/digital-marketing.jpg";
@@ -54,9 +55,18 @@ const unslugify = (slug) => slug.replace(/-/g, " ").replace(/\b\w/g, l => l.toUp
 
 const CategoryCourses = () => {
   const { categoryName } = useParams();
+  const [loading, setLoading] = useState(true);
   const filteredCourses = allCourses.filter(
     (course) => course.category === categoryName
   );
+
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => setLoading(false), 700);
+    return () => clearTimeout(timer);
+  }, [categoryName]);
+
+  if (loading) return <Loader />;
 
   return (
     <div className="min-h-screen bg-[#f5f9ff] py-12 px-4">

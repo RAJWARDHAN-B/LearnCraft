@@ -1,5 +1,6 @@
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import React from "react";
+import Loader from "../components/Loader";
 
 // Sample content mapped by blog id
 const blogContent = {
@@ -77,8 +78,16 @@ const DEFAULT_IMAGE = "https://farm3.staticflickr.com/2936/14765026726_b8a02d398
 
 const BlogDetail = () => {
   const { id } = useParams();
+  const [loading, setLoading] = useState(true);
   const blog = blogContent[id];
 
+  useEffect(() => {
+    setLoading(true);
+    const timer = setTimeout(() => setLoading(false), 700);
+    return () => clearTimeout(timer);
+  }, [id]);
+
+  if (loading) return <Loader />;
   if (!blog) return <div className="p-6 text-xl text-center">Blog not found</div>;
 
   return (
