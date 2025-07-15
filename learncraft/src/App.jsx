@@ -13,6 +13,7 @@ import Testimonials from "./pages/Testimonials";
 import Footer from "./components/Footer";
 import CourseDetail from "./pages/CourseDetail";
 import MyLearning from "./pages/MyLearning";
+import Explore from "./pages/Explore";
 
 // Optional placeholder components for other routes
 const Group = () => <div className="p-10 text-2xl">Group Page</div>;
@@ -34,7 +35,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/my-learning" element={<MyLearning />} />
+        <Route path="/explore" element={<Explore />} />
         <Route path="/authors" element={<Authors />} />
         <Route path="/group" element={<Group />} />
         <Route path="/testimonials" element={<Testimonials />} />
