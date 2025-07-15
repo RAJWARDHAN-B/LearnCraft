@@ -124,7 +124,7 @@ const CourseDetail = () => {
               }}
               style={{ boxShadow: selectedIdx === idx ? '0 2px 12px 0 rgba(59,130,246,0.15)' : undefined }}
             >
-              <span className="truncate max-w-[110px] sm:max-w-[140px] flex items-center gap-2">
+              <span className="flex items-center gap-2 whitespace-normal break-words">
                 {c.name}
                 {watched.includes(idx) && <CheckCircle size={16} className="text-green-500" />}
               </span>
