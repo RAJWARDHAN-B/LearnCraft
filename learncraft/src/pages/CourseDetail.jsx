@@ -49,21 +49,21 @@ const CourseDetail = () => {
   if (!course) return <div className="p-10 text-xl">Course not found.</div>;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 flex flex-col md:flex-row">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 flex flex-col md:flex-row">
       {/* Sidebar */}
-      <aside className="w-full md:w-80 bg-white/90 border-r border-gray-200 p-4 md:p-8 flex-shrink-0 shadow-md md:rounded-tr-3xl md:rounded-br-3xl">
-        <h2 className="text-xl font-bold mb-6 text-blue-800 tracking-tight">Course Content</h2>
+      <aside className="w-full md:w-80 bg-white/90 dark:bg-gray-800/90 border-r border-gray-200 dark:border-gray-700 p-4 md:p-8 flex-shrink-0 shadow-md md:rounded-tr-3xl md:rounded-br-3xl">
+        <h2 className="text-xl font-bold mb-6 text-blue-800 dark:text-yellow-300 tracking-tight">Course Content</h2>
         <ul className="space-y-2">
           {course.courseList.map((c, idx) => (
             <li
               key={idx}
               className={`rounded-lg px-4 py-3 cursor-pointer flex items-center justify-between transition font-medium text-sm md:text-base
-                ${selectedIdx === idx ? "bg-blue-600 text-white shadow-lg" : "hover:bg-blue-100 text-blue-900"}`}
+                ${selectedIdx === idx ? "bg-blue-600 dark:bg-yellow-400 text-white dark:text-gray-900 shadow-lg" : "hover:bg-blue-100 dark:hover:bg-gray-700 text-blue-900 dark:text-gray-200"}`}
               onClick={() => setSelectedIdx(idx)}
               style={{ boxShadow: selectedIdx === idx ? '0 2px 12px 0 rgba(59,130,246,0.15)' : undefined }}
             >
               <span className="truncate max-w-[140px]">{c.name}</span>
-              <span className="text-xs text-blue-200 ml-2">{c.hours} hrs</span>
+              <span className="text-xs text-blue-200 dark:text-yellow-300 ml-2">{c.hours} hrs</span>
             </li>
           ))}
         </ul>
@@ -75,7 +75,7 @@ const CourseDetail = () => {
           {/* Removed the top card section with image, title, description, and info cards */}
         </div>
         {/* Video Player */}
-        <div className="w-full max-w-4xl aspect-w-16 aspect-h-9 mb-6 rounded-3xl overflow-hidden shadow-2xl bg-black border-4 border-blue-200">
+        <div className="w-full max-w-4xl aspect-w-16 aspect-h-9 mb-6 rounded-3xl overflow-hidden shadow-2xl bg-black border-4 border-blue-200 dark:border-yellow-400">
           <iframe
             src={YOUTUBE_PLACEHOLDER}
             title={course.courseList[selectedIdx].name}
@@ -85,20 +85,20 @@ const CourseDetail = () => {
             style={{ borderRadius: '1.5rem' }}
           ></iframe>
         </div>
-        <div className="w-full max-w-4xl bg-white/90 rounded-2xl shadow p-6 mb-8 flex flex-col md:flex-row md:items-center md:justify-between">
+        <div className="w-full max-w-4xl bg-white/90 dark:bg-gray-800/90 rounded-2xl shadow p-6 mb-8 flex flex-col md:flex-row md:items-center md:justify-between">
           <div>
-            <h2 className="text-xl font-semibold mb-1 text-blue-800">{course.courseList[selectedIdx].name}</h2>
-            <span className="text-blue-500 text-sm">{course.courseList[selectedIdx].hours} hrs</span>
+            <h2 className="text-xl font-semibold mb-1 text-blue-800 dark:text-yellow-300">{course.courseList[selectedIdx].name}</h2>
+            <span className="text-blue-500 dark:text-yellow-300 text-sm">{course.courseList[selectedIdx].hours} hrs</span>
           </div>
           <div className="mt-4 md:mt-0 flex flex-wrap gap-2">
             {course.skills.map(skill => (
-              <span key={skill} className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-medium shadow-sm">{skill}</span>
+              <span key={skill} className="bg-blue-100 dark:bg-gray-700 text-blue-700 dark:text-yellow-200 px-3 py-1 rounded-full text-xs font-medium shadow-sm">{skill}</span>
             ))}
           </div>
         </div>
         {/* Salary Section */}
         <div className="w-full max-w-4xl">
-          <div className="bg-gradient-to-r from-blue-100 to-blue-200 mt-4 p-6 rounded-2xl text-center text-lg font-semibold text-blue-900 shadow">
+          <div className="bg-gradient-to-r from-blue-100 to-blue-200 dark:from-gray-800 dark:to-gray-900 mt-4 p-6 rounded-2xl text-center text-lg font-semibold text-blue-900 dark:text-yellow-200 shadow">
             Median salary: <span className="font-bold">{course.salary}</span> &nbsp;|&nbsp; Job Openings: <span className="font-bold">{course.jobs}</span>
           </div>
         </div>

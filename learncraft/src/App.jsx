@@ -25,29 +25,31 @@ const Home = () => (
     <CompanyLogos />
     <PopularCourses />
     <TrainingSection />
-    <Authors />
-    <Testimonials />
+    <div id="authors"><Authors /></div>
+    <div id="testimonials"><Testimonials /></div>
   </div>
 );
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/explore" element={<Explore />} />
-        <Route path="/my-learning" element={<MyLearning />} />
-        <Route path="/authors" element={<Authors />} />
-        <Route path="/group" element={<Group />} />
-        <Route path="/testimonials" element={<Testimonials />} />
-        <Route path="/blog" element={<Blogs />} />
-        <Route path="/blog/:id" element={<BlogDetail />} />
-        <Route path="/courses/:id" element={<CourseDetail />} />
-        <Route path="/category/:categoryName" element={<CategoryCourses />} />
-      </Routes>
-      <Footer/>
-    </Router>
+    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/explore" element={<Explore />} />
+          <Route path="/my-learning" element={<MyLearning />} />
+          <Route path="/authors" element={<Authors />} />
+          <Route path="/group" element={<Group />} />
+          <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/blog" element={<Blogs />} />
+          <Route path="/blog/:id" element={<BlogDetail />} />
+          <Route path="/courses/:id" element={<CourseDetail />} />
+          <Route path="/category/:categoryName" element={<CategoryCourses />} />
+        </Routes>
+        <Footer/>
+      </Router>
+    </div>
   );
 }
 
