@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { CheckCircle } from "lucide-react";
 import Loader from "../components/Loader";
 
 const courseData = {
@@ -32,10 +33,13 @@ const courseData = {
 
 const YOUTUBE_PLACEHOLDER = "https://www.youtube.com/embed/dQw4w9WgXcQ?si=czLfRnLSX70mDgAr";
 
+const STORAGE_KEY = "learncraft_watched_videos";
+
 const CourseDetail = () => {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
   const [selectedIdx, setSelectedIdx] = useState(0);
+  const [watched, setWatched] = useState([]);
   const DEFAULT_IMAGE = "https://farm3.staticflickr.com/2936/14765026726_b8a02d3989.jpg";
   const course = courseData[id];
 
@@ -45,14 +49,49 @@ const CourseDetail = () => {
     return () => clearTimeout(timer);
   }, [id]);
 
+  // Load watched videos from localStorage
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    setWatched(data[id] || []);
+  }, [id]);
+
+  // Mark video as watched when selectedIdx changes
+  useEffect(() => {
+    if (!course) return;
+    setWatched((prev) => {
+      if (prev.includes(selectedIdx)) return prev;
+      const updated = [...prev, selectedIdx];
+      const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+      data[id] = updated;
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      return updated;
+    });
+  }, [selectedIdx, id, course]);
+
   if (loading) return <Loader />;
   if (!course) return <div className="p-10 text-xl">Course not found.</div>;
+
+  // Progress calculation
+  const progress = Math.round((watched.length / course.courseList.length) * 100);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-100 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 flex flex-col md:flex-row">
       {/* Sidebar */}
       <aside className="w-full md:w-80 bg-white/90 dark:bg-gray-800/90 border-r border-gray-200 dark:border-gray-700 p-4 md:p-8 flex-shrink-0 shadow-md md:rounded-tr-3xl md:rounded-br-3xl">
         <h2 className="text-xl font-bold mb-6 text-blue-800 dark:text-yellow-300 tracking-tight">Course Content</h2>
+        {/* Progress Bar */}
+        <div className="mb-6">
+          <div className="flex justify-between items-center mb-1 text-xs font-semibold text-blue-700 dark:text-yellow-300">
+            <span>Progress</span>
+            <span>{progress}%</span>
+          </div>
+          <div className="w-full h-2 bg-blue-100 dark:bg-gray-700 rounded-full overflow-hidden">
+            <div
+              className="h-2 bg-blue-500 dark:bg-yellow-400 rounded-full transition-all duration-300"
+              style={{ width: `${progress}%` }}
+            ></div>
+          </div>
+        </div>
         <ul className="space-y-2">
           {course.courseList.map((c, idx) => (
             <li
@@ -62,7 +101,10 @@ const CourseDetail = () => {
               onClick={() => setSelectedIdx(idx)}
               style={{ boxShadow: selectedIdx === idx ? '0 2px 12px 0 rgba(59,130,246,0.15)' : undefined }}
             >
-              <span className="truncate max-w-[140px]">{c.name}</span>
+              <span className="truncate max-w-[140px] flex items-center gap-2">
+                {c.name}
+                {watched.includes(idx) && <CheckCircle size={16} className="text-green-500" />}
+              </span>
               <span className="text-xs text-blue-200 dark:text-yellow-300 ml-2">{c.hours} hrs</span>
             </li>
           ))}
