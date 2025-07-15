@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const DEFAULT_IMAGE = "https://farm3.staticflickr.com/2936/14765026726_b8a02d3989.jpg";
 
@@ -56,27 +57,35 @@ const BlogCard = ({ id, title, desc, img, large }) => (
 
 const Blogs = () => {
   return (
-    <div className="bg-gray-50 min-h-screen px-4 sm:px-6 md:px-10 py-8">
-      <header className="text-center mb-10">
-        <h1 className="text-3xl sm:text-4xl font-bold leading-tight">
-          Learncraft Training Institute Blog
-        </h1>
-      </header>
+    <>
+      <Helmet>
+        <title>Blog | Learncraft</title>
+        <meta name="description" content="Read inspiring stories, tips, and news from the Learncraft Training Institute blog." />
+        <meta property="og:title" content="Blog | Learncraft" />
+        <meta property="og:description" content="Read inspiring stories, tips, and news from the Learncraft Training Institute blog." />
+      </Helmet>
+      <div className="bg-gray-50 min-h-screen px-4 sm:px-6 md:px-10 py-8">
+        <header className="text-center mb-10">
+          <h1 className="text-3xl sm:text-4xl font-bold leading-tight">
+            Learncraft Training Institute Blog
+          </h1>
+        </header>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 auto-rows-fr">
-        {blogs.map((blog, idx) => (
-          <BlogCard key={idx} {...blog} />
-        ))}
-      </div>
-
-      <footer className="mt-16 border-t pt-8 text-center text-sm text-gray-500">
-        <p>©2025 Learncraft Training Institute. All Rights Reserved</p>
-        <div className="flex flex-wrap justify-center gap-4 mt-4">
-          <a href="#" className="hover:underline">Privacy Policy</a>
-          <a href="#" className="hover:underline">Terms & Conditions</a>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 auto-rows-fr">
+          {blogs.map((blog, idx) => (
+            <BlogCard key={idx} {...blog} />
+          ))}
         </div>
-      </footer>
-    </div>
+
+        <footer className="mt-16 border-t pt-8 text-center text-sm text-gray-500">
+          <p>©2025 Learncraft Training Institute. All Rights Reserved</p>
+          <div className="flex flex-wrap justify-center gap-4 mt-4">
+            <a href="#" className="hover:underline">Privacy Policy</a>
+            <a href="#" className="hover:underline">Terms & Conditions</a>
+          </div>
+        </footer>
+      </div>
+    </>
   );
 };
 

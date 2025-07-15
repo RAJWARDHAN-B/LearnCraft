@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { Helmet } from "react-helmet";
 
 // Dummy course data
 const courses = [
@@ -58,9 +59,18 @@ const MyLearning = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-2 xs:px-4 py-8 xs:py-12">
-      <h2 className="text-2xl xs:text-3xl font-bold mb-6 xs:mb-8">My Learning</h2>
+    <>
+      <Helmet>
+        <title>My Learning | Learncraft</title>
+        <meta name="description" content="Track your learning progress, view enrolled courses, and continue your learning journey on Learncraft." />
+        <meta property="og:title" content="My Learning | Learncraft" />
+        <meta property="og:description" content="Track your learning progress, view enrolled courses, and continue your learning journey on Learncraft." />
+      </Helmet>
+      <div className="max-w-7xl mx-auto px-2 xs:px-4 py-8 xs:py-12">
+        <h2 className="text-2xl xs:text-3xl font-bold mb-6 xs:mb-8">My Learning</h2>
 
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 xs:gap-8">
+          {/* Course List */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 xs:gap-8">
         {/* Course List */}
         <div className="lg:col-span-2 space-y-4 xs:space-y-6">

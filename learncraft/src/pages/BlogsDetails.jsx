@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Loader from "../components/Loader";
+import { Helmet } from "react-helmet";
 
 // Sample content mapped by blog id
 const blogContent = {
@@ -89,21 +90,28 @@ const BlogDetail = () => {
 
   if (loading) return <Loader />;
   if (!blog) return <div className="p-6 text-xl text-center">Blog not found</div>;
-
   return (
-    <div className="px-4 sm:px-6 md:px-10 py-6 max-w-5xl mx-auto">
-      <img
-        src={DEFAULT_IMAGE}
-        alt={blog.title}
-        className="w-full h-auto object-cover rounded-xl mb-6 max-h-[400px]"
-      />
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-gray-800">
-        {blog.title}
-      </h1>
-      <div className="space-y-4 text-base sm:text-lg text-gray-700 leading-relaxed">
-        {blog.content}
+    <>
+      <Helmet>
+        <title>{blog.title} | Learncraft Blog</title>
+        <meta name="description" content={`Read: ${blog.title} on the Learncraft blog. Inspiring stories, tips, and news for learners and professionals.`} />
+        <meta property="og:title" content={`${blog.title} | Learncraft Blog`} />
+        <meta property="og:description" content={`Read: ${blog.title} on the Learncraft blog. Inspiring stories, tips, and news for learners and professionals.`} />
+      </Helmet>
+      <div className="px-4 sm:px-6 md:px-10 py-6 max-w-5xl mx-auto">
+        <img
+          src={DEFAULT_IMAGE}
+          alt={blog.title}
+          className="w-full h-auto object-cover rounded-xl mb-6 max-h-[400px]"
+        />
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+          {blog.title}
+        </h1>
+        <div className="space-y-4 text-base sm:text-lg text-gray-700 leading-relaxed">
+          {blog.content}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

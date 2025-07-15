@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Search, BarChart2, Megaphone, Building2, Code2, DollarSign, Palette } from "lucide-react";
 import PopularCourses from "./PopularCourses";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const categories = [
   { name: "Data Science", icon: <BarChart2 size={32} className="text-blue-600" /> },
@@ -17,9 +18,15 @@ const slugify = (str) => str.toLowerCase().replace(/ /g, "-");
 
 const Explore = () => {
   const navigate = useNavigate();
-
   return (
-    <div className="min-h-screen bg-[#f5f9ff] dark:bg-gray-900 pb-12 transition-colors duration-300">
+    <>
+      <Helmet>
+        <title>Explore Courses | Learncraft</title>
+        <meta name="description" content="Explore and search for top courses by category, popularity, and more on Learncraft. Find your next learning path!" />
+        <meta property="og:title" content="Explore Courses | Learncraft" />
+        <meta property="og:description" content="Explore and search for top courses by category, popularity, and more on Learncraft. Find your next learning path!" />
+      </Helmet>
+      <div className="min-h-screen bg-[#f5f9ff] dark:bg-gray-900 pb-12 transition-colors duration-300">
       {/* Hero/Search Section */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -100,6 +107,7 @@ const Explore = () => {
         </div>
       </motion.div>
     </div>
+    </>
   );
 };
 
