@@ -5,7 +5,6 @@ import { useInView } from "react-intersection-observer";
 const DEFAULT_IMAGE =
   "https://farm3.staticflickr.com/2936/14765026726_b8a02d3989.jpg";
 
-// Animation variant
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
