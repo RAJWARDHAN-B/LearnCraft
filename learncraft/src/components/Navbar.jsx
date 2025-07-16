@@ -37,6 +37,7 @@ const Navbar = () => {
     { name: "Group", path: "/group" },
     { name: "Testimonial", path: "/#testimonials" },
     { name: "Blog", path: "/blog" },
+    {name: "BlogPost", path: "/vij"},
   ];
 
   return (
