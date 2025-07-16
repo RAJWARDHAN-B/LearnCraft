@@ -16,6 +16,7 @@ import MyLearning from "./pages/MyLearning";
 import Explore from "./pages/Explore";
 import CategoryCourses from "./pages/CategoryCourses";
 import { AnimatePresence, motion } from "framer-motion";
+import BlogPost from "./pages/BlogPost";
 
 // Optional placeholder components for other routes
 const Group = () => <div className="p-10 text-2xl">Group Page</div>;
@@ -54,6 +55,7 @@ function AnimatedRoutes() {
         <Route path="/blog/:id" element={<BlogDetail />} />
         <Route path="/courses/:id" element={<CourseDetail />} />
         <Route path="/category/:categoryName" element={<CategoryCourses />} />
+        <Route path="/vij" element={<BlogPost />} />
       </Routes>
     </AnimatePresence>
   );
