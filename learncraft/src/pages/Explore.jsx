@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Search, BarChart2, Megaphone, Building2, Code2, DollarSign, Palette } from "lucide-react";
 import PopularCourses from "./PopularCourses";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import courses from '../data/courses';
+import { Link } from 'react-router-dom';
 
 const categories = [
   { name: "Data Science", icon: <BarChart2 size={32} className="text-blue-600" /> },
@@ -18,6 +20,11 @@ const slugify = (str) => str.toLowerCase().replace(/ /g, "-");
 
 const Explore = () => {
   const navigate = useNavigate();
+  const [search, setSearch] = useState("");
+  const filteredCourses = courses.filter(course =>
+    course.title.toLowerCase().includes(search.toLowerCase()) ||
+    course.category.toLowerCase().includes(search.toLowerCase())
+  );
   return (
     <>
       <Helmet>
@@ -44,6 +51,8 @@ const Explore = () => {
           <input
             type="text"
             placeholder="Search courses, categories..."
+            value={search}
+            onChange={e => setSearch(e.target.value)}
             className="w-full px-4 sm:px-6 py-3 text-gray-700 dark:text-gray-100 dark:bg-gray-900 rounded-full focus:outline-none text-sm sm:text-base"
           />
           <button className="absolute right-2 top-2 bg-[#1919ec] dark:bg-yellow-400 hover:bg-blue-900 dark:hover:bg-yellow-500 text-white dark:text-gray-900 p-2 rounded-full">
@@ -51,6 +60,41 @@ const Explore = () => {
           </button>
         </div>
       </motion.div>
+      {search && (
+        <div className="max-w-2xl mx-auto mb-8">
+          {filteredCourses.length === 0 ? (
+            <div className="text-center text-gray-500">No courses found.</div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {filteredCourses.map(course => (
+                <Link
+                  to={`/courses/${course.id}`}
+                  key={course.id}
+                  className="group bg-white rounded-2xl overflow-hidden relative transition duration-300 hover:scale-[1.02] hover:shadow-xl border-2 hover:border-indigo-500 p-2"
+                >
+                  <div className="relative">
+                    <img
+                      src={course.image}
+                      alt={course.title}
+                      className="w-full h-36 object-cover transition-all duration-200"
+                      loading="lazy"
+                    />
+                    {course.bestSeller && (
+                      <span className="absolute bottom-2 right-2 bg-indigo-700 text-white text-xs px-2 py-1 rounded-full font-semibold">
+                        BEST SELLER
+                      </span>
+                    )}
+                  </div>
+                  <div className="p-3">
+                    <h3 className="text-base font-semibold">{course.title}</h3>
+                    <p className="text-xs text-gray-500 mb-2">{course.author}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Popular Courses Section */}
       <motion.div

@@ -5,47 +5,9 @@ import dataScience from "../assets/data-science.jpg";
 import digitalMarketing from "../assets/digital-marketing.jpg";
 import civilEngineering from "../assets/civil-engineering.jpg";
 import { Helmet } from "react-helmet-async";
+import courses from '../data/courses';
 
 const DEFAULT_IMAGE = "https://farm3.staticflickr.com/2936/14765026726_b8a02d3989.jpg";
-
-const courses = [
-  {
-    id: 1,
-    title: "Data Science",
-    author: "Colt stelle",
-    rating: 4.4,
-    reviews: 4,
-    price: 20,
-    classes: 12,
-    students: 150,
-    image: dataScience,
-    bestSeller: true,
-  },
-  {
-    id: 2,
-    title: "Digital Marketing",
-    author: "Colt stelle",
-    rating: 4.5,
-    reviews: 4.5,
-    price: 20,
-    classes: 12,
-    students: 130,
-    image: digitalMarketing,
-    bestSeller: true,
-  },
-  {
-    id: 3,
-    title: "Civil Engineering",
-    author: "Colt stelle",
-    rating: 5,
-    reviews: 5,
-    price: 20,
-    classes: 12,
-    students: 120,
-    image: civilEngineering,
-    bestSeller: true,
-  },
-];
 
 // Helper to get course progress from localStorage
 const STORAGE_KEY = "learncraft_watched_videos";

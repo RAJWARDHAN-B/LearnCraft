@@ -6,49 +6,7 @@ import dataScience from "../assets/data-science.jpg";
 import digitalMarketing from "../assets/digital-marketing.jpg";
 import civilEngineering from "../assets/civil-engineering.jpg";
 import { Helmet } from "react-helmet-async";
-
-const allCourses = [
-  {
-    id: 1,
-    title: "Data Science",
-    author: "Colt stelle",
-    rating: 4.4,
-    reviews: 4,
-    price: 20,
-    classes: 12,
-    students: 150,
-    image: dataScience,
-    bestSeller: true,
-    category: "data-science",
-  },
-  {
-    id: 2,
-    title: "Digital Marketing",
-    author: "Colt stelle",
-    rating: 4.5,
-    reviews: 4.5,
-    price: 20,
-    classes: 12,
-    students: 130,
-    image: digitalMarketing,
-    bestSeller: true,
-    category: "digital-marketing",
-  },
-  {
-    id: 3,
-    title: "Civil Engineering",
-    author: "Colt stelle",
-    rating: 5,
-    reviews: 5,
-    price: 20,
-    classes: 12,
-    students: 120,
-    image: civilEngineering,
-    bestSeller: true,
-    category: "civil-engineering",
-  },
-  // Add more courses and categories as needed
-];
+import courses from '../data/courses';
 
 const DEFAULT_IMAGE = "https://farm3.staticflickr.com/2936/14765026726_b8a02d3989.jpg";
 
@@ -72,7 +30,7 @@ function getCourseProgress(courseId) {
 const CategoryCourses = () => {
   const { categoryName } = useParams();
   const [loading, setLoading] = useState(true);
-  const filteredCourses = allCourses.filter(
+  const filteredCourses = courses.filter(
     (course) => course.category === categoryName
   );
   const readableCategory = unslugify(categoryName);

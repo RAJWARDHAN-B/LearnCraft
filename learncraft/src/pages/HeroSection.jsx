@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Search, CheckCircle } from "lucide-react";
 import heroImage from "../assets/hero.svg";
 import { Helmet } from "react-helmet-async";
+import courses from '../data/courses';
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
+  const [search, setSearch] = useState("");
+  const filteredCourses = courses.filter(course =>
+    course.title.toLowerCase().includes(search.toLowerCase()) ||
+    course.category.toLowerCase().includes(search.toLowerCase())
+  );
   return (
     <>
       <Helmet>
@@ -36,12 +43,49 @@ const HeroSection = () => {
               <input
                 type="text"
                 placeholder="search courses..."
+                value={search}
+                onChange={e => setSearch(e.target.value)}
                 className="w-full px-6 py-3 text-gray-700 dark:text-gray-200 bg-transparent rounded-full focus:outline-none"
               />
               <button className="absolute right-2 top-2 bg-[#1919ec] hover:bg-blue-900 dark:bg-blue-700 dark:hover:bg-blue-900 text-white p-2 rounded-full transition-colors">
                 <Search />
               </button>
             </div>
+            {search && (
+              <div className="max-w-md mx-auto mb-8">
+                {filteredCourses.length === 0 ? (
+                  <div className="text-center text-gray-500">No courses found.</div>
+                ) : (
+                  <div className="grid grid-cols-1 gap-4">
+                    {filteredCourses.map(course => (
+                      <Link
+                        to={`/courses/${course.id}`}
+                        key={course.id}
+                        className="group bg-white rounded-2xl overflow-hidden relative transition duration-300 hover:scale-[1.02] hover:shadow-xl border-2 hover:border-indigo-500 p-2"
+                      >
+                        <div className="relative">
+                          <img
+                            src={course.image}
+                            alt={course.title}
+                            className="w-full h-36 object-cover transition-all duration-200"
+                            loading="lazy"
+                          />
+                          {course.bestSeller && (
+                            <span className="absolute bottom-2 right-2 bg-indigo-700 text-white text-xs px-2 py-1 rounded-full font-semibold">
+                              BEST SELLER
+                            </span>
+                          )}
+                        </div>
+                        <div className="p-3">
+                          <h3 className="text-base font-semibold">{course.title}</h3>
+                          <p className="text-xs text-gray-500 mb-2">{course.author}</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
 
             {/* Feature Icons */}
             <div className="flex justify-center lg:justify-start gap-6 flex-wrap">
