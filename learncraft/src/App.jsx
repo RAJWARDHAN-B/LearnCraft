@@ -7,7 +7,6 @@ import CompanyLogos from "./pages/CompanyLogos";
 import TrainingSection from "./pages/TrainingSection";
 import Blogs from "./pages/Blogs";
 import PopularCourses from "./pages/PopularCourses";
-import BlogDetail from "./pages/BlogsDetails";
 import Authors from "./pages/Authors";
 import Testimonials from "./pages/Testimonials";
 import Footer from "./components/Footer";
@@ -52,7 +51,7 @@ function AnimatedRoutes() {
         <Route path="/group" element={<Group />} />
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/blog" element={<Blogs />} />
-        <Route path="/blog/:id" element={<BlogDetail />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
         <Route path="/courses/:id" element={<CourseDetail />} />
         <Route path="/category/:categoryName" element={<CategoryCourses />} />
         <Route path="/vij" element={<BlogPost />} />
