@@ -86,7 +86,14 @@ const Navbar = () => {
                     onMouseEnter={() => setExploreDropdownOpen(true)}
                     onMouseLeave={() => setExploreDropdownOpen(false)}
                   >
-                    {name}
+                    <Link
+                      to={path}
+                      className={`cursor-pointer hover:text-[#6C63FF] relative ${
+                        location.pathname === path ? "text-[#3F3D56]" : ""
+                      }`}
+                    >
+                      {name}
+                    </Link>
                     <ChevronDown size={16} className={`transition-transform duration-200 ${exploreDropdownOpen ? 'rotate-180' : ''}`} />
                     {location.pathname === path && (
                       <div className="w-full h-[2px] bg-[#6C63FF] absolute -bottom-1 left-0"></div>
