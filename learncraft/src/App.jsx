@@ -7,6 +7,7 @@ import CompanyLogos from "./pages/CompanyLogos";
 import TrainingSection from "./pages/TrainingSection";
 import Blogs from "./pages/Blogs";
 import PopularCourses from "./pages/PopularCourses";
+import BlogDetail from "./pages/BlogsDetails";
 import Authors from "./pages/Authors";
 import Testimonials from "./pages/Testimonials";
 import Footer from "./components/Footer";
@@ -17,8 +18,15 @@ import CategoryCourses from "./pages/CategoryCourses";
 import { AnimatePresence, motion } from "framer-motion";
 import BlogPost from "./pages/BlogPost";
 
-// Optional placeholder components for other routes
-const Group = () => <div className="p-10 text-2xl">Group Page</div>;
+// Placeholder component for future implementation
+const Group = () => (
+  <div className="min-h-screen flex items-center justify-center">
+    <div className="text-center">
+      <h1 className="text-3xl font-bold text-gray-900 mb-4">Group Page</h1>
+      <p className="text-gray-600">This page is under development.</p>
+    </div>
+  </div>
+);
 
 const Home = () => (
   <div>
@@ -46,15 +54,51 @@ function AnimatedRoutes() {
             <Explore />
           </motion.div>
         } />
-        <Route path="/my-learning" element={<MyLearning />} />
-        <Route path="/authors" element={<Authors />} />
-        <Route path="/group" element={<Group />} />
-        <Route path="/testimonials" element={<Testimonials />} />
-        <Route path="/blog" element={<Blogs />} />
-        <Route path="/blog/:id" element={<BlogPost />} />
-        <Route path="/courses/:id" element={<CourseDetail />} />
-        <Route path="/category/:categoryName" element={<CategoryCourses />} />
-        <Route path="/vij" element={<BlogPost />} />
+        <Route path="/my-learning" element={
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}>
+            <MyLearning />
+          </motion.div>
+        } />
+        <Route path="/authors" element={
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}>
+            <Authors />
+          </motion.div>
+        } />
+        <Route path="/group" element={
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}>
+            <Group />
+          </motion.div>
+        } />
+        <Route path="/testimonials" element={
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}>
+            <Testimonials />
+          </motion.div>
+        } />
+        <Route path="/blog" element={
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}>
+            <Blogs />
+          </motion.div>
+        } />
+        <Route path="/blog/:id" element={
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}>
+            <BlogDetail />
+          </motion.div>
+        } />
+        <Route path="/courses/:id" element={
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}>
+            <CourseDetail />
+          </motion.div>
+        } />
+        <Route path="/category/:categoryName" element={
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}>
+            <CategoryCourses />
+          </motion.div>
+        } />
+        <Route path="/vij" element={
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}>
+            <BlogPost />
+          </motion.div>
+        } />
       </Routes>
     </AnimatePresence>
   );
@@ -62,7 +106,7 @@ function AnimatedRoutes() {
 
 function App() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div className="min-h-screen bg-white">
       <Router>
         <Navbar />
         <AnimatedRoutes />

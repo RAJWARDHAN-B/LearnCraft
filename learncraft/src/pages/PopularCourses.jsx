@@ -39,7 +39,7 @@ const PopularCourses = () => {
         </h2>
 
         <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6 md:gap-8">
-          {courses.map((course) => {
+          {courses.slice(0, 6).map((course) => {
             const { percent, completed } = getCourseProgress(course.id);
             return (
               <Link
