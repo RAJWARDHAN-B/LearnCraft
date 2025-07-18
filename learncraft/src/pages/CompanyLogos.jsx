@@ -6,41 +6,57 @@ import hubspot from "../assets/hubspot.svg";
 
 const CompanyLogos = () => {
   return (
-    <div className="bg-white py-10 overflow-hidden">
-      <h3 className="text-center text-gray-800 font-semibold mb-6 text-2xl">
-        Trusted by companies of all sizes
-      </h3>
+    <div className="w-full bg-gradient-to-r from-blue-50 to-indigo-50 py-16 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4">
+        <h3 className="text-center text-gray-800 font-bold mb-12 text-3xl md:text-4xl">
+          Trusted by companies of all sizes
+        </h3>
 
-      <div className="w-full flex justify-center">
-        <div className="w-1/2 relative overflow-hidden">
+        <div className="w-full relative overflow-hidden">
           <div
-            className="flex space-x-16 w-max"
+            className="flex space-x-20 w-max"
             style={{
-              animation: "scrollLeft 20s linear infinite",
+              animation: "scrollLeft 25s linear infinite",
             }}
           >
-            {[...Array(2)].map((_, i) => (
-              <div key={i} className="flex space-x-16 items-center">
-                <img
-                  src={microsoft}
-                  alt="Microsoft"
-                  className="h-16 sm:h-24 md:h-32 grayscale opacity-70"
-                />
-                <img
-                  src={google}
-                  alt="Google"
-                  className="h-16 sm:h-24 md:h-32 grayscale opacity-70"
-                />
-                <img
-                  src={fedex}
-                  alt="Fedex"
-                  className="h-16 sm:h-24 md:h-32 grayscale opacity-70"
-                />
-                <img
-                  src={hubspot}
-                  alt="Hubspot"
-                  className="h-16 sm:h-24 md:h-32 grayscale opacity-70"
-                />
+            {[...Array(3)].map((_, i) => (
+              <div key={i} className="flex space-x-20 items-center">
+                <div className="flex flex-col items-center group">
+                  <img
+                    src={microsoft}
+                    alt="Microsoft"
+                    className="h-16 sm:h-20 md:h-24 transition-all duration-300 group-hover:scale-110"
+                    style={{ filter: 'none' }}
+                  />
+                  <span className="text-xs text-gray-600 mt-2 font-medium">Microsoft</span>
+                </div>
+                <div className="flex flex-col items-center group">
+                  <img
+                    src={google}
+                    alt="Google"
+                    className="h-16 sm:h-20 md:h-24 transition-all duration-300 group-hover:scale-110"
+                    style={{ filter: 'none' }}
+                  />
+                  <span className="text-xs text-gray-600 mt-2 font-medium">Google</span>
+                </div>
+                <div className="flex flex-col items-center group">
+                  <img
+                    src={fedex}
+                    alt="Fedex"
+                    className="h-16 sm:h-20 md:h-24 transition-all duration-300 group-hover:scale-110"
+                    style={{ filter: 'none' }}
+                  />
+                  <span className="text-xs text-gray-600 mt-2 font-medium">FedEx</span>
+                </div>
+                <div className="flex flex-col items-center group">
+                  <img
+                    src={hubspot}
+                    alt="Hubspot"
+                    className="h-16 sm:h-20 md:h-24 transition-all duration-300 group-hover:scale-110"
+                    style={{ filter: 'none' }}
+                  />
+                  <span className="text-xs text-gray-600 mt-2 font-medium">HubSpot</span>
+                </div>
               </div>
             ))}
           </div>
