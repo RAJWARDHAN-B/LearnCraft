@@ -74,7 +74,9 @@ const Navbar = () => {
       <style>{`html { scroll-behavior: smooth; }`}</style>
       <nav className="w-full bg-white shadow-md">
         <div className="max-w-7xl mx-auto py-4 flex justify-between items-center">
-          <img src={logomain} alt="Logo" className="h-16 w-80 object-contain" />
+          <Link to="/">
+            <img src={logomain} alt="Logo" className="h-16 w-80 object-contain cursor-pointer" />
+          </Link>
 
           {/* Desktop Nav */}
           <ul className="hidden md:flex gap-6 text-gray-700 font-medium mx-auto">
