@@ -1,25 +1,52 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { blogs } from "../data/blogs";
 
 const DEFAULT_IMAGE = "https://farm3.staticflickr.com/2936/14765026726_b8a02d3989.jpg";
 
-const BlogCard = ({ id, title, content, img, large }) => (
+const blogs = [
+  {
+    id: "mike-norton",
+    title: "Staying Relevant in Data Science: How Consistent Skill Growth Drives Mike Norton’s Success",
+    desc: "After over 30 years in the telecom industry and a distinguished career as an officer in the Marine Corps, Mike Norton isn't slowing down...",
+    img: "/images/mike-norton.jpg",
+    large: true,
+  },
+  {
+    id: "kailey-chemistry-strategy",
+    title: "From Chemistry to Strategy: How Ishpinder Kailey Used the iMBA to Expand Her Impact in STEM",
+    img: "/images/chemistry-strategy.jpg",
+  },
+  {
+    id: "self-taught-dev",
+    title: "Self-taught web developer proves that anything is possible",
+    img: "/images/self-taught-dev.jpg",
+  },
+  {
+    id: "journey-top",
+    title: "Way to Top: A Journey Soo Unbelievable",
+    img: "/images/journey-top.jpg",
+  },
+  {
+    id: "jeremy-data-science",
+    title: "Mastering Data Science: Jeremy Samuel’s Journey with The University of Illinois",
+    img: "/images/jeremy-samuel.jpg",
+  },
+];
+
+const BlogCard = ({ id, title, desc, img, large }) => (
   <div
     className={`rounded-xl bg-white shadow-md transition hover:shadow-lg ${
       large ? "md:col-span-2 md:row-span-2 p-6" : "p-4"
     }`}
   >
     <img
-      src={img || DEFAULT_IMAGE}
+      src={DEFAULT_IMAGE}
       alt={title}
       className="rounded-xl w-full h-48 sm:h-56 md:h-64 object-cover"
     />
     <h3 className="mt-4 font-semibold text-lg sm:text-xl">{title}</h3>
-    {content && content[0] && content[0].text && (
-      <p className="text-sm text-gray-600 mt-2">{content[0].text[0]}</p>
-    )}
+    {desc && <p className="text-sm text-gray-600 mt-2">{desc}</p>}
     <Link to={`/blog/${id}`}>
       <button className="mt-4 text-blue-600 font-medium hover:underline flex items-center gap-1">
         Learn More <span>→</span>
