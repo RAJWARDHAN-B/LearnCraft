@@ -28,7 +28,6 @@ const CompanyLogos = () => {
                     className="h-16 sm:h-20 md:h-24 transition-all duration-300 group-hover:scale-110"
                     style={{ filter: 'none' }}
                   />
-                  <span className="text-xs text-gray-600 mt-2 font-medium">Microsoft</span>
                 </div>
                 <div className="flex flex-col items-center group">
                   <img
@@ -37,7 +36,6 @@ const CompanyLogos = () => {
                     className="h-16 sm:h-20 md:h-24 transition-all duration-300 group-hover:scale-110"
                     style={{ filter: 'none' }}
                   />
-                  <span className="text-xs text-gray-600 mt-2 font-medium">Google</span>
                 </div>
                 <div className="flex flex-col items-center group">
                   <img
@@ -46,7 +44,6 @@ const CompanyLogos = () => {
                     className="h-16 sm:h-20 md:h-24 transition-all duration-300 group-hover:scale-110"
                     style={{ filter: 'none' }}
                   />
-                  <span className="text-xs text-gray-600 mt-2 font-medium">FedEx</span>
                 </div>
                 <div className="flex flex-col items-center group">
                   <img
@@ -55,7 +52,6 @@ const CompanyLogos = () => {
                     className="h-16 sm:h-20 md:h-24 transition-all duration-300 group-hover:scale-110"
                     style={{ filter: 'none' }}
                   />
-                  <span className="text-xs text-gray-600 mt-2 font-medium">HubSpot</span>
                 </div>
               </div>
             ))}
