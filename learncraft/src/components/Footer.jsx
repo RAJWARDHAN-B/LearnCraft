@@ -5,7 +5,7 @@ import {
   Instagram,
   MapPin,
   Phone,
-  Folder
+  Mail
 } from "lucide-react";
 
 import logo from "../assets/logomain.svg"; // Replace with your actual logo path
@@ -32,7 +32,7 @@ const Footer = () => {
           <ul className="space-y-2 text-sm">
             <li>Home</li>
             <li>Mentor</li>
-            <li>Group</li>
+            {/* <li>Group</li> */}
             <li>Testimonial</li>
           </ul>
         </div>
@@ -60,7 +60,7 @@ const Footer = () => {
             <p>089990 21576</p>
           </div>
           <div className="flex items-center justify-center md:justify-start gap-2">
-            <Folder className="text-[#4F46E5]" size={18} />
+            <Mail className="text-[#4F46E5]" size={18} />
             <p>learncraftinstitute@gmail.com</p>
           </div>
         </div>
@@ -69,7 +69,7 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="mt-12 pt-6 border-t text-xs flex flex-col md:flex-row justify-between text-center text-gray-500">
         <p>©2025 Agency. All Rights Reserved</p>
-        <div className="flex justify-center gap-4 mt-2 md:mt-0 ">
+        <div className="flex justify-center gap-4 mt-2 md:mt-0">
           <a href="#" className="hover:underline">Privacy policy</a>
           <a href="#" className="hover:underline">Terms & conditions</a>
         </div>
