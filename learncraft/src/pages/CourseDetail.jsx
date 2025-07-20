@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { CheckCircle, Menu } from "lucide-react";
+import { useParams, useNavigate } from "react-router-dom";
+import { CheckCircle, Menu, ArrowLeft } from "lucide-react";
 import Loader from "../components/Loader";
 
 const courseData = {
@@ -37,6 +37,7 @@ const STORAGE_KEY = "learncraft_watched_videos";
 
 const CourseDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(true);
   const [selectedIdx, setSelectedIdx] = useState(0);
   const [watched, setWatched] = useState([]);
@@ -146,6 +147,14 @@ const CourseDetail = () => {
       {/* Main Content */}
       <main className="flex-1 p-2 sm:p-4 md:p-10 flex flex-col items-center">
         <div className="w-full max-w-4xl">
+          {/* Back Button */}
+          <button
+            onClick={() => navigate(-1)}
+            className="flex items-center gap-2 text-blue-600 dark:text-yellow-400 hover:text-blue-800 dark:hover:text-yellow-300 font-medium mb-4 transition-colors duration-200"
+          >
+            <ArrowLeft size={20} />
+            <span>Back</span>
+          </button>
           {/* Removed the top card section with image, title, description, and info cards */}
         </div>
         {/* Video Player */}
