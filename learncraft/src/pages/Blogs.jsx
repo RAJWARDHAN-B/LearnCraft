@@ -10,7 +10,6 @@ const blogs = [
     title: "Staying Relevant in Data Science: How Consistent Skill Growth Drives Mike Norton’s Success",
     desc: "After over 30 years in the telecom industry and a distinguished career as an officer in the Marine Corps, Mike Norton isn't slowing down...",
     img: "/images/mike-norton.jpg",
-    large: true,
   },
   {
     id: "kailey-chemistry-strategy",

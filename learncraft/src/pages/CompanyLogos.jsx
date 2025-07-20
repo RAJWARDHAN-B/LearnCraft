@@ -33,25 +33,37 @@ const CompanyLogos = () => {
                   <img
                     src={google}
                     alt="Google"
-                    className="h-16 sm:h-20 md:h-24 transition-all duration-300 group-hover:scale-110"
+                    className="h-18 sm:h-22 md:h-26 transition-all duration-300 group-hover:scale-110"
                     style={{ filter: 'none' }}
                   />
+<<<<<<< HEAD
+=======
+                  
+>>>>>>> 55aa918bba9c767704d9e4337875fb94355f692e
                 </div>
                 <div className="flex flex-col items-center group">
                   <img
                     src={fedex}
                     alt="Fedex"
-                    className="h-16 sm:h-20 md:h-24 transition-all duration-300 group-hover:scale-110"
+                    className="h-6 sm:h-12 md:h-14 transition-all duration-300 group-hover:scale-110"
                     style={{ filter: 'none' }}
                   />
+<<<<<<< HEAD
+=======
+                  
+>>>>>>> 55aa918bba9c767704d9e4337875fb94355f692e
                 </div>
                 <div className="flex flex-col items-center group">
                   <img
                     src={hubspot}
                     alt="Hubspot"
-                    className="h-16 sm:h-20 md:h-24 transition-all duration-300 group-hover:scale-110"
+                    className="h-18 sm:h-22 md:h-26 transition-all duration-300 group-hover:scale-110"
                     style={{ filter: 'none' }}
                   />
+<<<<<<< HEAD
+=======
+                
+>>>>>>> 55aa918bba9c767704d9e4337875fb94355f692e
                 </div>
               </div>
             ))}
