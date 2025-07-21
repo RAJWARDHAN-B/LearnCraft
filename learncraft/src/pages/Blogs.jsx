@@ -14,21 +14,25 @@ const blogs = [
   {
     id: "kailey-chemistry-strategy",
     title: "From Chemistry to Strategy: How Ishpinder Kailey Used the iMBA to Expand Her Impact in STEM",
+    desc: "Ishpinder Kailey transitioned from science to strategic leadership through the iMBA, empowering her work in STEM innovation.",
     img: "/images/chemistry-strategy.jpg",
   },
   {
     id: "self-taught-dev",
     title: "Self-taught web developer proves that anything is possible",
+    desc: "From scratch to software success — this developer’s story is proof that determination and free resources can change your future.",
     img: "/images/self-taught-dev.jpg",
   },
   {
     id: "journey-top",
     title: "Way to Top: A Journey Soo Unbelievable",
+    desc: "An inspiring professional journey filled with unexpected turns, risks, and bold career moves that paid off.",
     img: "/images/journey-top.jpg",
   },
   {
     id: "jeremy-data-science",
     title: "Mastering Data Science: Jeremy Samuel’s Journey with The University of Illinois",
+    desc: "Jeremy's structured learning via the University of Illinois' program helped him shift into a high-impact data science role.",
     img: "/images/jeremy-samuel.jpg",
   },
 ];
@@ -36,7 +40,7 @@ const blogs = [
 const BlogCard = ({ id, title, desc, img, large }) => (
   <div
     className={`rounded-xl bg-white shadow-md transition hover:shadow-lg ${
-      large ? "md:col-span-2 md:row-span-2 p-6" : "p-4"
+      large ? "lg:col-span-2 lg:row-span-2 p-6" : "p-4"
     }`}
   >
     <img
@@ -47,7 +51,7 @@ const BlogCard = ({ id, title, desc, img, large }) => (
     <h3 className="mt-4 font-semibold text-lg sm:text-xl">{title}</h3>
     {desc && <p className="text-sm text-gray-600 mt-2">{desc}</p>}
     <Link to={`/blog/${id}`}>
-      <button className="mt-4 text-blue-600 font-medium hover:underline flex items-center gap-1">
+      <button className="mt-4 inline block text-black hover:text-blue-600 transition">
         Learn More <span>→</span>
       </button>
     </Link>
@@ -70,9 +74,9 @@ const Blogs = () => {
           </h1>
         </header>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 auto-rows-fr">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-auto">
           {blogs.map((blog, idx) => (
-            <BlogCard key={idx} {...blog} />
+            <BlogCard key={idx} {...blog} large={idx===0} />
           ))}
         </div>
 
