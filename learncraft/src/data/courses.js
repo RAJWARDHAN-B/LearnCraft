@@ -3,6 +3,8 @@ import dataScience from '../assets/data-science.jpg';
 import digitalMarketing from '../assets/digital-marketing.jpg';
 import civilEngineering from '../assets/civil-engineering.jpg';
 
+const DATA_SCIENCE_IMAGE = "https://images.unsplash.com/photo-1625535069654-cfeb8f829088?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+
 const courses = [
   // Data Science Courses
   {
@@ -14,7 +16,7 @@ const courses = [
     price: 20,
     classes: 12,
     students: 150,
-    image: dataScience,
+    image: DATA_SCIENCE_IMAGE,
     bestSeller: true,
     category: 'data-science',
   },
@@ -27,7 +29,7 @@ const courses = [
     price: 25,
     classes: 15,
     students: 220,
-    image: dataScience,
+    image: DATA_SCIENCE_IMAGE,
     bestSeller: true,
     category: 'data-science',
   },
@@ -40,7 +42,7 @@ const courses = [
     price: 18,
     classes: 10,
     students: 340,
-    image: dataScience,
+    image: DATA_SCIENCE_IMAGE,
     bestSeller: false,
     category: 'data-science',
   },
@@ -53,7 +55,7 @@ const courses = [
     price: 30,
     classes: 18,
     students: 180,
-    image: dataScience,
+    image: DATA_SCIENCE_IMAGE,
     bestSeller: false,
     category: 'data-science',
   },

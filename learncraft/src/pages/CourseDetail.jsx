@@ -19,12 +19,12 @@ const courseData = {
     salary: "$144,256",
     jobs: "52,582",
     courseList: [
-      { name: "What is Data Science?", hours: "11" },
-      { name: "Tools for Data Science", hours: "18" },
-      { name: "Data Science Methodology", hours: "6" },
-      { name: "Python for Data Science", hours: "25" },
-      { name: "Python Project for Data Science", hours: "8" },
-      { name: "SQL with Python", hours: "18" }
+      { name: "What is Data Science?", hours: "11", video: "https://youtu.be/ua-CiDNNj30?si=PCaIz7w4RbsKHEhw" },
+      { name: "Tools for Data Science", hours: "18", video: "https://youtu.be/LHBE6Q9XlzI?si=xSXmySWTXNF6hpdK" },
+      { name: "Data Science Methodology", hours: "6", video: "https://youtu.be/ua-CiDNNj30?si=PCaIz7w4RbsKHEhw" },
+      { name: "Python for Data Science", hours: "25", video: "https://youtu.be/LHBE6Q9XlzI?si=xSXmySWTXNF6hpdK" },
+      { name: "Python Project for Data Science", hours: "8", video: "https://youtu.be/ua-CiDNNj30?si=PCaIz7w4RbsKHEhw" },
+      { name: "SQL with Python", hours: "18", video: "https://youtu.be/LHBE6Q9XlzI?si=xSXmySWTXNF6hpdK" }
     ],
     image: "/images/data-science-banner.jpg"
   },
@@ -161,7 +161,7 @@ const CourseDetail = () => {
         <div className="w-full max-w-4xl aspect-w-16 aspect-h-9 mb-6 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl bg-black border-2 sm:border-4 border-blue-200 dark:border-yellow-400"
           style={{ minHeight: '180px', maxHeight: '60vw', height: 'auto' }}>
           <iframe
-            src={YOUTUBE_PLACEHOLDER}
+            src={course.courseList[selectedIdx].video || YOUTUBE_PLACEHOLDER}
             title={course.courseList[selectedIdx].name}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
