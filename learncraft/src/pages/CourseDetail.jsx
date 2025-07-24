@@ -19,12 +19,12 @@ const courseData = {
     salary: "$144,256",
     jobs: "52,582",
     courseList: [
-      { name: "What is Data Science?", hours: "11", video: "https://youtu.be/ua-CiDNNj30?si=PCaIz7w4RbsKHEhw" },
-      { name: "Tools for Data Science", hours: "18", video: "https://youtu.be/LHBE6Q9XlzI?si=xSXmySWTXNF6hpdK" },
-      { name: "Data Science Methodology", hours: "6", video: "https://youtu.be/ua-CiDNNj30?si=PCaIz7w4RbsKHEhw" },
-      { name: "Python for Data Science", hours: "25", video: "https://youtu.be/LHBE6Q9XlzI?si=xSXmySWTXNF6hpdK" },
-      { name: "Python Project for Data Science", hours: "8", video: "https://youtu.be/ua-CiDNNj30?si=PCaIz7w4RbsKHEhw" },
-      { name: "SQL with Python", hours: "18", video: "https://youtu.be/LHBE6Q9XlzI?si=xSXmySWTXNF6hpdK" }
+      { name: "What is Data Science?", hours: "11", video: "https://www.youtube.com/embed/ua-CiDNNj30" },
+      { name: "Tools for Data Science", hours: "18", video: "https://www.youtube.com/embed/LHBE6Q9XlzI" },
+      { name: "Data Science Methodology", hours: "6", video: "https://www.youtube.com/embed/ua-CiDNNj30" },
+      { name: "Python for Data Science", hours: "25", video: "https://www.youtube.com/embed/LHBE6Q9XlzI" },
+      { name: "Python Project for Data Science", hours: "8", video: "https://www.youtube.com/embed/ua-CiDNNj30" },
+      { name: "SQL with Python", hours: "18", video: "https://www.youtube.com/embed/LHBE6Q9XlzI" }
     ],
     image: "/images/data-science-banner.jpg"
   },
