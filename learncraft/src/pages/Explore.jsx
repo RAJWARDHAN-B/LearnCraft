@@ -242,7 +242,7 @@ const Explore = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="max-w-7xl mx-auto px-2 sm:px-4 mt-8 sm:mt-12"
         >
-          <h2 className="text-xl sm:text-2xl font-bold mb-6 text-gray-900 dark:text-yellow-200">Popular Courses</h2>
+        
           <PopularCourses />
         </motion.div>
 
