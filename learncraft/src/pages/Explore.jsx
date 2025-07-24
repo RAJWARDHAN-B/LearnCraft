@@ -54,10 +54,13 @@ const categories = [
 
 const slugify = (str) => str.toLowerCase().replace(/ /g, "-");
 
+const PAGE_SIZE = 8;
+
 const Explore = () => {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
   
   const filteredCourses = courses.filter(course =>
     course.title.toLowerCase().includes(search.toLowerCase()) ||
@@ -223,12 +226,22 @@ const Explore = () => {
                   Search Results ({filteredCourses.length})
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                  {filteredCourses.map(course => (
+                  {filteredCourses.slice(0, visibleCount).map(course => (
                     <Link key={course.id} to={`/courses/${course.id}`}>
                       <CourseCard course={course} />
                     </Link>
                   ))}
                 </div>
+                {visibleCount < filteredCourses.length && (
+                  <div className="flex justify-center mt-6">
+                    <button
+                      onClick={() => setVisibleCount(visibleCount + PAGE_SIZE)}
+                      className="px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition"
+                    >
+                      Show More
+                    </button>
+                  </div>
+                )}
               </div>
             )}
           </div>
