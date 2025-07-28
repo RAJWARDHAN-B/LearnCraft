@@ -37,7 +37,7 @@ const PopularCourses = () => {
         <meta property="og:title" content="Popular Courses | Learncraft" />
         <meta property="og:description" content="Browse the most popular courses on Learncraft. Find top-rated courses in Data Science, Digital Marketing, Civil Engineering, and more." />
       </Helmet>
-      <div className="py-8 sm:py-12 px-2 sm:px-4 md:px-16 bg-white">
+      <div className="popular-courses py-8 sm:py-12 px-2 sm:px-4 md:px-16 bg-white">
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-10 text-center">
           Popular courses.
         </h2>

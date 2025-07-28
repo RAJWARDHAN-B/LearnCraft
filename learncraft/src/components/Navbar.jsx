@@ -75,11 +75,11 @@ const Navbar = () => {
       <nav className="w-full bg-white shadow-md">
         <div className="max-w-7xl mx-auto py-4 flex justify-between items-center">
           <Link to="/">
-            <img src={logomain} alt="Logo" className="h-16 w-80 object-contain cursor-pointer" />
+            <img src={logomain} alt="Logo" className="navbar-logo h-16 w-80 object-contain cursor-pointer" />
           </Link>
 
           {/* Desktop Nav */}
-          <ul className="hidden md:flex gap-6 text-gray-700 font-medium mx-auto">
+          <ul className="navbar-nav hidden md:flex gap-6 text-gray-700 font-medium mx-auto">
             {navLinks.map(({ name, path }, i) => (
               <li key={i} className="relative">
                 {name === "Explore" ? (

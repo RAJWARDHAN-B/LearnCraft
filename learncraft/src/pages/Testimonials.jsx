@@ -56,7 +56,7 @@ const Testimonials = () => {
         <meta property="og:title" content="Testimonials | Learncraft" />
         <meta property="og:description" content="See what our learners and partners say about Learncraft. Read testimonials and success stories from our community." />
       </Helmet>
-      <div className="py-16 px-4 md:px-16 bg-white">
+      <div className="testimonials-section py-16 px-4 md:px-16 bg-white">
         <Swiper
           spaceBetween={30}
           slidesPerView={1}

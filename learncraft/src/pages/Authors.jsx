@@ -38,7 +38,7 @@ const Authors = () => {
         <meta property="og:title" content="Authors | Learncraft" />
         <meta property="og:description" content="Meet the expert authors and instructors at Learncraft. Learn from industry leaders and professionals." />
       </Helmet>
-      <div className="bg-blue-100 py-16 px-4 text-center">
+      <div className="authors-section bg-blue-100 py-16 px-4 text-center">
         <h2 className="text-3xl font-bold text-gray-800 mb-12">Meet our authors.</h2>
         <div className="flex flex-wrap justify-center gap-10">
           {authors.map((author) => (

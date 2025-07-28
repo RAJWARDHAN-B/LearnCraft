@@ -17,6 +17,7 @@ import Explore from "./pages/Explore";
 import CategoryCourses from "./pages/CategoryCourses";
 import { AnimatePresence, motion } from "framer-motion";
 import BlogPost from "./pages/BlogPost";
+import HomeTour from "./components/HomeTour";
 
 // Placeholder component for future implementation
 const Group = () => (
@@ -111,6 +112,7 @@ function App() {
         <Navbar />
         <AnimatedRoutes />
         <Footer/>
+        <HomeTour />
       </Router>
     </div>
   );

@@ -39,7 +39,7 @@ const HeroSection = () => {
             </p>
 
             {/* Search Bar */}
-            <div className="relative max-w-md mx-auto lg:mx-0 rounded-full overflow-hidden shadow-lg bg-white dark:bg-gray-800 mb-6 transition-colors duration-300">
+            <div className="hero-search relative max-w-md mx-auto lg:mx-0 rounded-full overflow-hidden shadow-lg bg-white dark:bg-gray-800 mb-6 transition-colors duration-300">
               <input
                 type="text"
                 placeholder="search courses..."
@@ -88,7 +88,7 @@ const HeroSection = () => {
             )}
 
             {/* Feature Icons */}
-            <div className="flex justify-center lg:justify-start gap-6 flex-wrap">
+            <div className="hero-features flex justify-center lg:justify-start gap-6 flex-wrap">
               <div className="flex items-center gap-2">
                 <span className="text-[#4a90e2] dark:text-blue-400">✔️</span> Flexible
               </div>

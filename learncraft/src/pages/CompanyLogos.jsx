@@ -6,7 +6,7 @@ import hubspot from "../assets/hubspot.svg";
 
 const CompanyLogos = () => {
   return (
-    <div className="w-full bg-gradient-to-r from-blue-50 to-indigo-50 py-16 overflow-hidden">
+    <div className="company-logos w-full bg-gradient-to-r from-blue-50 to-indigo-50 py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         <h3 className="text-center text-gray-800 font-bold mb-12 text-3xl md:text-4xl">
           Trusted by companies of all sizes

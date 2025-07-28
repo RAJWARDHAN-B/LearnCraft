@@ -12,7 +12,7 @@ import logo from "../assets/logomain.svg"; // Replace with your actual logo path
 
 const Footer = () => {
   return (
-    <footer className="bg-white px-6 sm:px-10 md:px-16 py-10 text-gray-700">
+    <footer className="footer-section bg-white px-6 sm:px-10 md:px-16 py-10 text-gray-700">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 items-start">
         {/* Logo & Socials */}
         <div className="space-y-4 text-center md:text-left">

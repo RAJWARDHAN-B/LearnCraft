@@ -10,7 +10,7 @@ const TrainingSection = () => {
         <meta property="og:title" content="Learncraft Training Institute | Training Programs" />
         <meta property="og:description" content="Explore Learncraft Training Institute's programs. Empower your career with practical skills and expert knowledge." />
       </Helmet>
-      <div className="bg-white">
+      <div className="training-section bg-white">
         {/* Heading Section */}
         <div className="max-w-7xl mx-auto px-4 py-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10">
