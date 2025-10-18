@@ -31,15 +31,16 @@ const Footer = () => {
             <li>Home</li>
             <li>Mentor</li>
             {/* <li>Group</li> */}
-            <li>Testimonial</li>
+            
           </ul>
         </div>
 
         {/* Company */}
         <div className="text-center md:text-left">
-          <h3 className="font-semibold text-lg mb-4">Company</h3>
+          <h3 className="font-semibold text-lg mb-4"></h3>
           <ul className="space-y-2 text-sm">
             <li>About Us</li>
+            <li>Testimonials</li>
             <li>Services</li>
           </ul>
         </div>
@@ -66,11 +67,11 @@ const Footer = () => {
 
       {/* Footer Bottom */}
       <div className="mt-12 pt-6 border-t text-xs flex flex-col md:flex-row justify-between text-center text-gray-500">
-        <p>©2025 Agency. All Rights Reserved</p>
-        <div className="flex justify-center gap-4 mt-2 md:mt-0">
+        <p>©2025 Learncraft Training Institute</p>
+        {/* <div className="flex justify-center gap-4 mt-2 md:mt-0">
           <a href="#" className="hover:underline">Privacy policy</a>
           <a href="#" className="hover:underline">Terms & conditions</a>
-        </div>
+        </div> */}
       </div>
     </footer>
   );
