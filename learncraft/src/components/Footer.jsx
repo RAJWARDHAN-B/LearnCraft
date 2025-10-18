@@ -48,6 +48,13 @@ const Footer = () => {
         {/* Contact */}
         <div className="text-center md:text-left space-y-4 text-sm">
           <div className="flex items-start justify-center md:justify-start gap-2">
+            <MapPin className="text-[#4F46E5]" size={24} />
+            <p>
+              7th Floor, Building 704, Palm Court, Mehrauli-Gurgaon Rd,<br />
+              DLF Colony, Sector 14, Gurugram, Haryana 122007
+            </p>
+          </div>
+          <div className="flex items-start justify-center md:justify-start gap-2">
             <MapPin className="text-[#4F46E5]" size={18} />
             <p>
               near MSEB Substation, At post,<br />
