@@ -1,30 +1,47 @@
 import React from "react";
 import linkedinIcon from "../assets/linkedin.svg";
-import author1 from "../assets/author1.webp";
-import author2 from "../assets/author2.jpg";
-import author3 from "../assets/author3.jpg";
+import dataanalystImage from "../../public/dataanalyst.jpeg";
 import { Helmet } from "react-helmet-async";
 
 const authors = [
   {
     id: 1,
-    name: "Chris Hemsworth",
-    title: "HR Manager",
-    image: author1,
+    name: "Pravin More",
+    title: "Founder & Civil Design Expert",
+    description: "10+ years of experience in infrastructure projects, specializing in RCC detailing and civil engineering tools like Tekla and AutoCAD.",
+    image: dataanalystImage,
     linkedin: "https://www.linkedin.com/in/rajwardhan-bhandigare/",
   },
   {
     id: 2,
-    name: "Dakota Johnson",
-    title: "Senior Designer",
-    image: author2,
+    name: "Aishwarya Dhole",
+    title: "HR & Communication Trainer",
+    description: "Focused on spoken English, personality development, and empowering rural learners with soft skills and job-readiness training.",
+    image: dataanalystImage,
     linkedin: "https://www.linkedin.com/in/rajwardhan-bhandigare/",
   },
   {
     id: 3,
-    name: "Scarlett Johansson",
-    title: "Data Analyst",
-    image: author3,
+    name: "Priyanka K.",
+    title: "Digital Marketing Strategist",
+    description: "Expert in SEO, Meta Ads, and AI-driven tools. She mentors students to manage real digital campaigns and build freelance careers.",
+    image: dataanalystImage,
+    linkedin: "https://www.linkedin.com/in/rajwardhan-bhandigare/",
+  },
+  {
+    id: 4,
+    name: "Pooja More",
+    title: "Computer & Accounting Instructor",
+    description: "Trained hundreds of rural students in Tally, MS Office, and basic computer skills, helping them become digitally literate.",
+    image: dataanalystImage,
+    linkedin: "https://www.linkedin.com/in/rajwardhan-bhandigare/",
+  },
+  {
+    id: 5,
+    name: "Suraj Panchal",
+    title: "Animation & Design Mentor",
+    description: "Skilled in graphic design, 2D/3D animation, and visual storytelling. Guides creative learners into the media and design industry.",
+    image: dataanalystImage,
     linkedin: "https://www.linkedin.com/in/rajwardhan-bhandigare/",
   },
 ];
@@ -33,37 +50,49 @@ const Authors = () => {
   return (
     <>
       <Helmet>
-        <title>Authors | Learncraft</title>
-        <meta name="description" content="Meet the expert authors and instructors at Learncraft. Learn from industry leaders and professionals." />
-        <meta property="og:title" content="Authors | Learncraft" />
-        <meta property="og:description" content="Meet the expert authors and instructors at Learncraft. Learn from industry leaders and professionals." />
+        <title>Meet Our Authors | Learncraft</title>
+        <meta name="description" content="Meet the expert authors and instructors at Learncraft Training Institute. Industry experts, passionate educators, and experienced professionals." />
+        <meta property="og:title" content="Meet Our Authors | Learncraft" />
+        <meta property="og:description" content="Meet the expert authors and instructors at Learncraft Training Institute. Industry experts, passionate educators, and experienced professionals." />
       </Helmet>
-      <div className="authors-section bg-blue-100 py-16 px-4 text-center">
-        <h2 className="text-3xl font-bold text-gray-800 mb-12">Meet our authors.</h2>
-        <div className="flex flex-wrap justify-center gap-10">
-          {authors.map((author) => (
-            <div key={author.id} className="flex flex-col items-center space-y-4 px-10">
-              <div className="relative">
-                <img
-                  src={author.image}
-                  alt={author.name}
-                  className="w-32 h-32 object-cover rounded-full border-4 border-white shadow-md"
-                />
-                <a
-                  href={author.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute -bottom-2 -right-2 bg-white rounded-full p-2 shadow-md hover:scale-105 transition"
-                >
-                  <img src={linkedinIcon} alt="LinkedIn" className="w-5 h-5" />
-                </a>
+      <div className="authors-section bg-gradient-to-br from-blue-50 to-indigo-100 py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-800 mb-6">Meet Our Authors</h2>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-4">
+              At Learncraft Training Institute, our content is crafted by industry experts, passionate educators, and experienced professionals who bring real-world insights into every article.
+            </p>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+              Whether it's Data Science, Digital Marketing, Civil Engineering, or Rural Education, our authors ensure each piece is accurate, up-to-date, and easy to understand for learners at all levels.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {authors.map((author) => (
+              <div key={author.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6">
+                <div className="flex flex-col items-center text-center">
+                  <div className="relative mb-4">
+                    <img
+                      src={author.image}
+                      alt={author.name}
+                      className="w-24 h-24 object-cover rounded-full border-4 border-blue-200 shadow-md"
+                    />
+                    <a
+                      href={author.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute -bottom-2 -right-2 bg-white rounded-full p-2 shadow-md hover:scale-105 transition"
+                    >
+                      <img src={linkedinIcon} alt="LinkedIn" className="w-4 h-4" />
+                    </a>
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{author.name}</h3>
+                  <p className="text-blue-600 font-semibold mb-3">{author.title}</p>
+                  <p className="text-gray-600 text-sm leading-relaxed">{author.description}</p>
+                </div>
               </div>
-              <div>
-                <p className="font-semibold text-gray-900">{author.name}</p>
-                <p className="text-sm text-gray-500">{author.title}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </>

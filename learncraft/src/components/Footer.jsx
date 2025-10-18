@@ -17,8 +17,6 @@ const Footer = () => {
         {/* Logo & Socials */}
         <div className="space-y-4 text-center md:text-left">
           <img src={logo} alt="Learncraft Logo" className="h-16 mx-auto md:mx-0" />
-          <h2 className="text-xl font-bold">Learncraft</h2>
-          <p className="text-sm">Training Institute</p>
           <div className="flex justify-center md:justify-start gap-4 mt-4 text-xl text-gray-700">
             <Facebook className="hover:text-blue-600 cursor-pointer" />
             <Twitter className="hover:text-blue-400 cursor-pointer" />
@@ -37,9 +35,9 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Links */}
+        {/* Company */}
         <div className="text-center md:text-left">
-          <h3 className="font-semibold text-lg mb-4 invisible md:visible">Links</h3>
+          <h3 className="font-semibold text-lg mb-4">Company</h3>
           <ul className="space-y-2 text-sm">
             <li>About Us</li>
             <li>Services</li>
