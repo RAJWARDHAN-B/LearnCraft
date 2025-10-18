@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Search, BarChart2, Megaphone, Building2, Code2, DollarSign, Palette, Star, Users, Clock } from "lucide-react";
+import { Search, BarChart2, Megaphone, Building2, GraduationCap, Star, Users, Clock } from "lucide-react";
 import PopularCourses from "./PopularCourses";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
@@ -30,25 +30,11 @@ const categories = [
     borderColor: "border-yellow-200"
   },
   { 
-    name: "Programming", 
-    icon: <Code2 size={32} className="text-green-600" />,
+    name: "Rural Courses", 
+    icon: <GraduationCap size={32} className="text-green-600" />,
     color: "from-green-500 to-green-600",
     bgColor: "bg-green-50",
     borderColor: "border-green-200"
-  },
-  { 
-    name: "Finance", 
-    icon: <DollarSign size={32} className="text-emerald-600" />,
-    color: "from-emerald-500 to-emerald-600",
-    bgColor: "bg-emerald-50",
-    borderColor: "border-emerald-200"
-  },
-  { 
-    name: "Design", 
-    icon: <Palette size={32} className="text-purple-600" />,
-    color: "from-purple-500 to-purple-600",
-    bgColor: "bg-purple-50",
-    borderColor: "border-purple-200"
   },
 ];
 

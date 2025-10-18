@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Menu, X, ChevronDown, BarChart2, Megaphone, Building2, Code2, DollarSign, Palette } from "lucide-react";
+import { Menu, X, ChevronDown, BarChart2, Megaphone, Building2, GraduationCap } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import logomain from "../assets/logomain.svg";
 import courses from "../data/courses";
@@ -32,25 +32,11 @@ const Navbar = () => {
       borderColor: "border-yellow-200"
     },
     { 
-      name: "Programming", 
-      icon: <Code2 size={20} className="text-green-600" />,
+      name: "Rural Courses", 
+      icon: <GraduationCap size={20} className="text-green-600" />,
       color: "text-green-600",
       bgColor: "bg-green-50",
       borderColor: "border-green-200"
-    },
-    { 
-      name: "Finance", 
-      icon: <DollarSign size={20} className="text-emerald-600" />,
-      color: "text-emerald-600",
-      bgColor: "bg-emerald-50",
-      borderColor: "border-emerald-200"
-    },
-    { 
-      name: "Design", 
-      icon: <Palette size={20} className="text-purple-600" />,
-      color: "text-purple-600",
-      bgColor: "bg-purple-50",
-      borderColor: "border-purple-200"
     },
   ];
 
