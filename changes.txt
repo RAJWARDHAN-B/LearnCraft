@@ -1,0 +1,139 @@
+Instruction for Explore Section Update
+
+Please update the Explore section as follows:
+
+Remove the following options:
+
+Programming
+
+Design
+
+Finance
+
+
+Add the following new option:
+
+Rural Courses
+
+
+
+Make sure the changes are reflected across both web and mobile views.
+
+Let me know once it's done.
+
+
+
+
+______________________________________________________________________________________________________________________________________________________
+
+
+⭐ Student Reviews
+
+1. Rohit Pawar – Data Science Course
+"The hands-on projects and Python training were game-changers for me. I got placed as a junior data analyst right after completing the course!"
+
+
+2. Sneha Kulkarni – Digital Marketing Course
+"From SEO to running Meta Ads, I learned everything practically. I’m now freelancing and managing 3 clients on my own."
+
+
+3. Vishal Jadhav – Civil Engineering Course
+"Tekla and AutoCAD training here helped me work on real site projects. The BBS and estimation modules were super useful."
+
+
+4. Priya More – Rural Computer Basics
+"I never thought I’d learn MS Office and Tally in my village. Now I’m teaching others and earning part-time!"
+
+
+5. Amol Patil – Digital Marketing with AI Tools
+"ChatGPT, Canva, and real campaign practice made the course so advanced. Definitely not the typical classroom training!"
+
+
+6. Meenal Deshmukh – Civil Engineering (BIM)
+"Revit and BIM sessions were very helpful. The trainers guided me like a mentor, and now I’ve joined a local architecture firm."
+
+
+7. Rahul Gite – Rural Awareness + CSC Skills
+"I learned about government schemes, online services, and also earned money helping people apply for jobs and documents online."
+
+______________________________________________________________________________________________________________________________________________________
+
+
+Website Footer Update Instruction
+
+Please make the following change in the footer section of the website:
+
+Combine “About Us” and “Services” into the same column (instead of displaying them in separate columns).
+
+Keep it clean and aligned, just like the other link groups.
+
+____________________________________________________________________________________________________________________________________________________________
+
+For meet our authors add 
+Meet Our Authors
+
+At Learncraft Training Institute, our content is crafted by industry experts, passionate educators, and experienced professionals who bring real-world insights into every article.
+
+Whether it's Data Science, Digital Marketing, Civil Engineering, or Rural Education, our authors ensure each piece is accurate, up-to-date, and easy to understand for learners at all levels.
+Pravin More
+Founder & Civil Design Expert
+10+ years of experience in infrastructure projects, specializing in RCC detailing and civil engineering tools like Tekla and AutoCAD.
+
+Aishwarya Dhole
+HR & Communication Trainer
+Focused on spoken English, personality development, and empowering rural learners with soft skills and job-readiness training.
+
+Priyanka K.
+Digital Marketing Strategist
+Expert in SEO, Meta Ads, and AI-driven tools. She mentors students to manage real digital campaigns and build freelance careers.
+
+Pooja More
+Computer & Accounting Instructor
+Trained hundreds of rural students in Tally, MS Office, and basic computer skills, helping them become digitally literate.
+
+Suraj Panchal
+Animation & Design Mentor
+Skilled in graphic design, 2D/3D animation, and visual storytelling. Guides creative learners into the media and design industry.
+
+
+____________________________________________________________________________________________________________________________________________________________
+
+🏗️ Civil Engineering Courses
+
+AutoCAD
+
+Revit Architecture
+
+Interior Design
+
+Architectural Design
+
+SP3D
+
+E3D
+
+STAAD Pro
+
+Quantity Survey
+
+Site Supervision
+
+Building Design & Estimation
+
+🌟 Popular Courses
+
+AutoCAD
+(2D & 3D Drafting for Civil & Mechanical Design)
+
+SmartPlant 3D (SP3D)
+(Industrial Piping & Plant Design)
+
+E3D (AVEVA Everything 3D)
+(Advanced Plant & Structural Design)
+
+_____________________________________________________________________________________________________________________________________________________________
+
+
+Jijau Nagar, near Chhatrapati Shivaji Maharaj Chowk,
+beside M.S.E.B. Substation,
+Bardapur, Maharashtra
