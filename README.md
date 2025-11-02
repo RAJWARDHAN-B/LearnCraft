@@ -22,6 +22,9 @@ The main goal is to provide a user-friendly platform where students and professi
 - **State Management**: useState, useEffect (React Hooks)
 - **Version Control**: Git & GitHub
 
+npm install --legacy-peer-deps
+
+
 ---
 
 ## 📌 Features
