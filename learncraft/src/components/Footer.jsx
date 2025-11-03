@@ -57,8 +57,9 @@ const Footer = () => {
           <div className="flex items-start justify-center md:justify-start gap-2">
             <MapPin className="text-[#4F46E5]" size={18} />
             <p>
-              near MSEB Substation, At post,<br />
-              Bardapur, Maharashtra 431517
+              Jijau Nagar, near Chhatrapati Shivaji Maharaj Chowk,<br />
+              beside M.S.E.B. Substation,<br />
+              Bardapur, Maharashtra
             </p>
           </div>
           <div className="flex items-center justify-center md:justify-start gap-2">

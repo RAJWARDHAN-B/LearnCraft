@@ -6,19 +6,13 @@ import "swiper/css/pagination";
 import { Star } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 
-// Avatar imports
-import avatar1 from "../assets/avatar1.jpg";
-import avatar2 from "../assets/avatar2.jpg";
-import avatar3 from "../assets/avatar3.webp";
-import avatar4 from "../assets/avatar4.jpg";
-
 const testimonials = [
   {
     name: "Rohit Pawar",
     title: "Data Science Course",
     message:
       "The hands-on projects and Python training were game-changers for me. I got placed as a junior data analyst right after completing the course!",
-    avatar: avatar1,
+    gender: "male",
     stars: 4.8,
   },
   {
@@ -26,7 +20,7 @@ const testimonials = [
     title: "Digital Marketing Course",
     message:
       "From SEO to running Meta Ads, I learned everything practically. I'm now freelancing and managing 3 clients on my own.",
-    avatar: avatar2,
+    gender: "female",
     stars: 4.6,
   },
   {
@@ -34,7 +28,7 @@ const testimonials = [
     title: "Civil Engineering Course",
     message:
       "Tekla and AutoCAD training here helped me work on real site projects. The BBS and estimation modules were super useful.",
-    avatar: avatar3,
+    gender: "male",
     stars: 4.7,
   },
   {
@@ -42,7 +36,7 @@ const testimonials = [
     title: "Rural Computer Basics",
     message:
       "I never thought I'd learn MS Office and Tally in my village. Now I'm teaching others and earning part-time!",
-    avatar: avatar4,
+    gender: "female",
     stars: 4.9,
   },
   {
@@ -50,7 +44,7 @@ const testimonials = [
     title: "Digital Marketing with AI Tools",
     message:
       "ChatGPT, Canva, and real campaign practice made the course so advanced. Definitely not the typical classroom training!",
-    avatar: avatar1,
+    gender: "male",
     stars: 4.5,
   },
   {
@@ -58,7 +52,7 @@ const testimonials = [
     title: "Civil Engineering (BIM)",
     message:
       "Revit and BIM sessions were very helpful. The trainers guided me like a mentor, and now I've joined a local architecture firm.",
-    avatar: avatar2,
+    gender: "female",
     stars: 4.8,
   },
   {
@@ -66,7 +60,7 @@ const testimonials = [
     title: "Rural Awareness + CSC Skills",
     message:
       "I learned about government schemes, online services, and also earned money helping people apply for jobs and documents online.",
-    avatar: avatar3,
+    gender: "male",
     stars: 4.6,
   },
 ];
@@ -111,7 +105,7 @@ const Testimonials = () => {
               <div className="bg-white rounded-2xl shadow-lg p-6 relative">
                 <div className="flex items-center gap-3 mb-4">
                   <img
-                    src={item.avatar}
+                    src={item.gender === "male" ? "/maleiconreview.png" : "/femaleiconreview.png"}
                     alt={item.name}
                     className="w-12 h-12 object-cover rounded-full border-2 border-white shadow-md"
                   />
