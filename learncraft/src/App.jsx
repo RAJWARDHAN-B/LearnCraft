@@ -17,6 +17,7 @@ import Explore from "./pages/Explore";
 import CategoryCourses from "./pages/CategoryCourses";
 import { AnimatePresence, motion } from "framer-motion";
 import BlogPost from "./pages/BlogPost";
+import AboutUs from "./pages/AboutUs";
 
 // Placeholder component for future implementation
 const Group = () => (
@@ -97,6 +98,11 @@ function AnimatedRoutes() {
         <Route path="/vij" element={
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}>
             <BlogPost />
+          </motion.div>
+        } />
+        <Route path="/about" element={
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.3 }}>
+            <AboutUs />
           </motion.div>
         } />
       </Routes>

@@ -7,6 +7,7 @@ import {
   Phone,
   Mail
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import logo from "../assets/logomain.svg"; // Replace with your actual logo path
 
@@ -39,9 +40,17 @@ const Footer = () => {
         <div className="text-center md:text-left">
           <h3 className="font-semibold text-lg mb-4"></h3>
           <ul className="space-y-2 text-sm">
-            <li>About Us</li>
-            <li>Testimonials</li>
-            <li>Services</li>
+            <li>
+              <Link to="/about" className="hover:text-blue-600 transition-colors">
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link to="/#testimonials" className="hover:text-blue-600 transition-colors">
+                Testimonials
+              </Link>
+            </li>
+            <li className="cursor-pointer hover:text-blue-600 transition-colors">Services</li>
           </ul>
         </div>
 
