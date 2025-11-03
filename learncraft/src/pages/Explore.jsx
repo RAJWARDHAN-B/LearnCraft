@@ -290,7 +290,10 @@ const Explore = () => {
           <div className="bg-gradient-to-r from-blue-500 to-indigo-600 dark:from-yellow-400 dark:to-yellow-600 rounded-2xl p-6 sm:p-8 text-white dark:text-gray-900 shadow-lg">
             <h3 className="text-lg sm:text-2xl font-bold mb-2">Not sure where to start?</h3>
             <p className="mb-4 text-sm sm:text-base">Browse our curated learning paths or talk to a mentor to get personalized recommendations!</p>
-            <button className="bg-white dark:bg-gray-900 text-blue-700 dark:text-yellow-400 font-semibold px-4 sm:px-6 py-2 rounded-full shadow hover:bg-blue-50 dark:hover:bg-gray-800 transition text-sm sm:text-base">
+            <button 
+              onClick={() => navigate("/about#contact")}
+              className="bg-white dark:bg-gray-900 text-blue-700 dark:text-yellow-400 font-semibold px-4 sm:px-6 py-2 rounded-full shadow hover:bg-blue-50 dark:hover:bg-gray-800 transition text-sm sm:text-base"
+            >
               Get Guidance
             </button>
           </div>

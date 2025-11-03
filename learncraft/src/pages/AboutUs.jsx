@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
+import { useLocation } from "react-router-dom";
 import { 
   MapPin, 
   Phone, 
@@ -14,6 +15,7 @@ import {
 } from "lucide-react";
 
 const AboutUs = () => {
+  const location = useLocation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -23,6 +25,19 @@ const AboutUs = () => {
   });
 
   const [submitStatus, setSubmitStatus] = useState(null);
+
+  useEffect(() => {
+    if (location.hash === "#contact") {
+      setTimeout(() => {
+        const element = document.getElementById("contact");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [location]);
 
   const handleChange = (e) => {
     setFormData({

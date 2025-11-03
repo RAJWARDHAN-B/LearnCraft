@@ -51,8 +51,7 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "Explore", path: "/explore" },
     { name: "About Us", path: "/about" },
-    { name: "Authors", path: "/#authors" },
-    { name: "Testimonial", path: "/#testimonials" },
+    { name: "Contact Us", path: "/about#contact" },
     { name: "Blog", path: "/blog" },
   ];
 
@@ -147,24 +146,49 @@ const Navbar = () => {
                       </div>
                     )}
                   </div>
-                ) : path.startsWith("/#") ? (
-                  <a
-                    href={path}
+                ) : path.includes("#") ? (
+                  <Link
+                    to={path}
                     className={`cursor-pointer hover:text-[#6C63FF] relative ${
-                      location.hash === path.replace("/", "") && location.pathname === "/" ? "text-[#3F3D56]" : ""
+                      location.pathname === "/about" && location.hash === "#contact" && name === "Contact Us" ? "text-[#3F3D56]" : ""
                     }`}
+                    onClick={(e) => {
+                      if (path.includes("#")) {
+                        const [pathname, hash] = path.split("#");
+                        if (location.pathname !== pathname) {
+                          // Navigate first, then scroll
+                          setTimeout(() => {
+                            const element = document.getElementById(hash);
+                            if (element) {
+                              element.scrollIntoView({ behavior: "smooth" });
+                            }
+                          }, 100);
+                        } else {
+                          e.preventDefault();
+                          const element = document.getElementById(hash);
+                          if (element) {
+                            element.scrollIntoView({ behavior: "smooth" });
+                          }
+                        }
+                      }
+                    }}
                   >
                     {name}
-                    {location.hash === path.replace("/", "") && location.pathname === "/" && (
+                    {location.pathname === "/about" && location.hash === "#contact" && name === "Contact Us" && (
                       <div className="w-full h-[2px] bg-[#6C63FF] absolute -bottom-1 left-0"></div>
                     )}
-                  </a>
+                  </Link>
                 ) : (
                   <Link
                     to={path}
                     className={`cursor-pointer hover:text-[#6C63FF] relative ${
                       location.pathname === path ? "text-[#3F3D56]" : ""
                     }`}
+                    onClick={() => {
+                      if (path === "/about") {
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }
+                    }}
                   >
                     {name}
                     {location.pathname === path && (
@@ -189,7 +213,30 @@ const Navbar = () => {
               <Link
                 key={i}
                 to={path}
-                onClick={() => setMenuOpen(false)}
+                onClick={(e) => {
+                  setMenuOpen(false);
+                  if (path.includes("#")) {
+                    const [pathname, hash] = path.split("#");
+                    if (location.pathname !== pathname) {
+                      setTimeout(() => {
+                        const element = document.getElementById(hash);
+                        if (element) {
+                          element.scrollIntoView({ behavior: "smooth" });
+                        }
+                      }, 100);
+                    } else {
+                      e.preventDefault();
+                      const element = document.getElementById(hash);
+                      if (element) {
+                        element.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }
+                  } else if (path === "/about") {
+                    setTimeout(() => {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }, 100);
+                  }
+                }}
                 className="block text-gray-700 font-medium hover:text-[#6C63FF]"
               >
                 {name}
