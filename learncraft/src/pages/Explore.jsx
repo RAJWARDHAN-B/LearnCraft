@@ -76,9 +76,6 @@ const Explore = () => {
             BEST SELLER
           </span>
         )}
-        <div className="absolute top-3 right-3 bg-black bg-opacity-50 text-white text-xs px-2 py-1 rounded-full">
-          ${course.price}
-        </div>
       </div>
       <div className="p-4">
         <h3 className="font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">

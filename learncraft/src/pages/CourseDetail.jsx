@@ -192,11 +192,7 @@ const CourseDetail = () => {
         {/* Course Info Section */}
         <div className="w-full max-w-4xl">
           <div className="bg-gradient-to-r from-blue-100 to-blue-200 dark:from-gray-800 dark:to-gray-900 mt-4 p-3 sm:p-6 rounded-2xl text-center text-sm sm:text-lg font-semibold text-blue-900 dark:text-yellow-200 shadow">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div>
-                <span className="font-bold">${course.price}</span>
-                <p className="text-xs opacity-80">Course Price</p>
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <span className="font-bold">{course.students}</span>
                 <p className="text-xs opacity-80">Students Enrolled</p>

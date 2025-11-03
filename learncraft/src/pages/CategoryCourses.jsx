@@ -97,7 +97,7 @@ const CategoryCourses = () => {
                         </div>
                         <div className="text-xs text-right text-blue-700 mt-1">{percent}%</div>
                       </div>
-                      <div className="flex items-center justify-between mb-2 sm:mb-4">
+                      <div className="flex items-center mb-2 sm:mb-4">
                         <div className="flex items-center gap-1 text-xs sm:text-sm">
                           <span className="text-red-600 font-semibold">{course.rating}</span>
                           {[...Array(5)].map((_, i) => (
@@ -109,7 +109,6 @@ const CategoryCourses = () => {
                             </span>
                           ))}
                         </div>
-                        <p className="text-xs sm:text-md font-semibold text-gray-800">${course.price}</p>
                       </div>
                       <div className="border-t pt-2 sm:pt-3 flex justify-between text-xs sm:text-sm text-gray-500">
                         <div className="flex items-center gap-1">

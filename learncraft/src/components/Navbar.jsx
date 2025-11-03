@@ -117,7 +117,7 @@ const Navbar = () => {
                                           {course.title}
                                         </p>
                                         <p className="text-xs text-gray-500">
-                                          ${course.price} • {course.rating}★
+                                          {course.rating}★
                                         </p>
                                       </div>
                                     </Link>
