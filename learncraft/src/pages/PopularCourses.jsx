@@ -16,6 +16,16 @@ const COURSE_TOPICS = {
   2: 6, // Digital Marketing (assume same for demo)
   3: 6, // Civil Engineering (assume same for demo)
   4: 6,
+  22: 4, // AutoCAD
+  23: 4, // Revit Architecture
+  24: 4, // Interior Design
+  25: 4, // Architectural Design
+  26: 4, // SmartPlant 3D (SP3D)
+  27: 4, // E3D (AVEVA Everything 3D)
+  28: 4, // STAAD Pro
+  29: 4, // Quantity Survey
+  30: 4, // Site Supervision
+  31: 4, // Building Design & Estimation
 };
 function getCourseProgress(courseId) {
   const data = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
@@ -39,10 +49,14 @@ const PopularCourses = () => {
       </Helmet>
       <div className="popular-courses py-8 sm:py-12 px-2 sm:px-4 md:px-16 bg-white">
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 sm:mb-10 text-center">
-          Popular courses.
+          🌟 Popular Courses
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-          {courses.slice(0, 4).map((course) => {
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {courses.filter(course => 
+            course.id === 22 || // AutoCAD
+            course.id === 26 || // SmartPlant 3D (SP3D)
+            course.id === 27    // E3D (AVEVA Everything 3D)
+          ).map((course) => {
             const { percent, completed } = getCourseProgress(course.id);
             return (
               <Link
@@ -69,7 +83,10 @@ const PopularCourses = () => {
                 </div>
                 <div className="p-2 xs:p-3 sm:p-5">
                   <h3 className="text-sm xs:text-base sm:text-lg font-semibold">{course.title}</h3>
-                  <p className="text-xs sm:text-sm text-gray-500 mb-2">{course.author}</p>
+                  <p className="text-xs sm:text-sm text-gray-500 mb-1">{course.author}</p>
+                  {course.description && (
+                    <p className="text-xs text-gray-600 mb-2 italic">({course.description})</p>
+                  )}
                   {/* Progress Bar */}
                   <div className="mb-2">
                     <div className="w-full h-2 bg-blue-100 rounded-full overflow-hidden">

@@ -469,6 +469,419 @@ const courses = [
       ]
     }
   },
+  {
+    id: 22,
+    title: 'AutoCAD',
+    author: 'CivilEngineeringAcademy',
+    rating: 4.8,
+    reviews: 650,
+    price: 25,
+    classes: 15,
+    students: 280,
+    image: IMAGE_MAP['civil-engineering'],
+    bestSeller: true,
+    category: 'civil-engineering',
+    description: '2D & 3D Drafting for Civil & Mechanical Design',
+    content: {
+      sections: [
+        {
+          title: 'AutoCAD Basics',
+          videoUrl: 'https://www.youtube.com/watch?v=5uDntDR5mbg',
+          duration: '2:30:00',
+          description: 'Introduction to AutoCAD interface and basic tools'
+        },
+        {
+          title: '2D Drafting Techniques',
+          videoUrl: 'https://www.youtube.com/watch?v=2Pp_zx2APco',
+          duration: '2:00:00',
+          description: 'Mastering 2D drawing and drafting for civil engineering'
+        },
+        {
+          title: '3D Modeling Fundamentals',
+          videoUrl: 'https://www.youtube.com/watch?v=bv8Ow4xoHjk',
+          duration: '2:15:00',
+          description: 'Creating 3D models for civil and mechanical design'
+        },
+        {
+          title: 'Advanced AutoCAD Tools',
+          videoUrl: 'https://www.youtube.com/watch?v=FPzI8pzSY1Y',
+          duration: '1:45:00',
+          description: 'Advanced features for professional drafting'
+        }
+      ]
+    }
+  },
+  {
+    id: 23,
+    title: 'Revit Architecture',
+    author: 'TheCivilEngineer',
+    rating: 4.7,
+    reviews: 520,
+    price: 30,
+    classes: 18,
+    students: 195,
+    image: IMAGE_MAP['civil-engineering'],
+    bestSeller: true,
+    category: 'civil-engineering',
+    content: {
+      sections: [
+        {
+          title: 'Revit Architecture Introduction',
+          videoUrl: 'https://www.youtube.com/watch?v=bv8Ow4xoHjk',
+          duration: '2:30:00',
+          description: 'Getting started with Revit Architecture'
+        },
+        {
+          title: 'Building Information Modeling (BIM)',
+          videoUrl: 'https://www.youtube.com/watch?v=_1x6g_rZWaw',
+          duration: '2:00:00',
+          description: 'Understanding BIM concepts and workflows'
+        },
+        {
+          title: 'Creating Architectural Models',
+          videoUrl: 'https://www.youtube.com/watch?v=8JnfIjaLDO0',
+          duration: '2:15:00',
+          description: 'Building detailed architectural models in Revit'
+        },
+        {
+          title: 'Documentation and Rendering',
+          videoUrl: 'https://www.youtube.com/watch?v=8oRjf8J42ZQ',
+          duration: '1:45:00',
+          description: 'Generating construction documents and visualizations'
+        }
+      ]
+    }
+  },
+  {
+    id: 24,
+    title: 'Interior Design',
+    author: 'The Constructor',
+    rating: 4.6,
+    reviews: 380,
+    price: 22,
+    classes: 12,
+    students: 165,
+    image: IMAGE_MAP['civil-engineering'],
+    bestSeller: false,
+    category: 'civil-engineering',
+    content: {
+      sections: [
+        {
+          title: 'Interior Design Principles',
+          videoUrl: 'https://www.youtube.com/watch?v=FPzI8pzSY1Y',
+          duration: '2:00:00',
+          description: 'Fundamentals of interior design and space planning'
+        },
+        {
+          title: 'Color Theory and Materials',
+          videoUrl: 'https://www.youtube.com/watch?v=k0U5jshOwB8',
+          duration: '1:45:00',
+          description: 'Understanding colors, textures, and materials'
+        },
+        {
+          title: 'Furniture and Layout Design',
+          videoUrl: 'https://www.youtube.com/watch?v=8JnfIjaLDO0',
+          duration: '1:30:00',
+          description: 'Creating functional and aesthetic layouts'
+        },
+        {
+          title: 'Lighting and Decoration',
+          videoUrl: 'https://www.youtube.com/watch?v=8oRjf8J42ZQ',
+          duration: '1:20:00',
+          description: 'Lighting design and decorative elements'
+        }
+      ]
+    }
+  },
+  {
+    id: 25,
+    title: 'Architectural Design',
+    author: 'CivilEngineeringAcademy',
+    rating: 4.9,
+    reviews: 440,
+    price: 32,
+    classes: 20,
+    students: 210,
+    image: IMAGE_MAP['civil-engineering'],
+    bestSeller: true,
+    category: 'civil-engineering',
+    content: {
+      sections: [
+        {
+          title: 'Architectural Design Fundamentals',
+          videoUrl: 'https://www.youtube.com/watch?v=5uDntDR5mbg',
+          duration: '2:30:00',
+          description: 'Core principles of architectural design'
+        },
+        {
+          title: 'Building Design Process',
+          videoUrl: 'https://www.youtube.com/watch?v=2Pp_zx2APco',
+          duration: '2:00:00',
+          description: 'Complete building design workflow'
+        },
+        {
+          title: 'Structural Integration',
+          videoUrl: 'https://www.youtube.com/watch?v=bv8Ow4xoHjk',
+          duration: '2:15:00',
+          description: 'Integrating structural systems with design'
+        },
+        {
+          title: 'Sustainable Architecture',
+          videoUrl: 'https://www.youtube.com/watch?v=FPzI8pzSY1Y',
+          duration: '1:45:00',
+          description: 'Green building and sustainable design practices'
+        }
+      ]
+    }
+  },
+  {
+    id: 26,
+    title: 'SmartPlant 3D (SP3D)',
+    author: 'TheCivilEngineer',
+    rating: 4.8,
+    reviews: 580,
+    price: 35,
+    classes: 22,
+    students: 245,
+    image: IMAGE_MAP['civil-engineering'],
+    bestSeller: true,
+    category: 'civil-engineering',
+    description: 'Industrial Piping & Plant Design',
+    content: {
+      sections: [
+        {
+          title: 'SP3D Introduction',
+          videoUrl: 'https://www.youtube.com/watch?v=bv8Ow4xoHjk',
+          duration: '2:30:00',
+          description: 'Introduction to SmartPlant 3D software'
+        },
+        {
+          title: 'Industrial Piping Design',
+          videoUrl: 'https://www.youtube.com/watch?v=_1x6g_rZWaw',
+          duration: '2:30:00',
+          description: 'Comprehensive piping design for industrial plants'
+        },
+        {
+          title: 'Plant Layout and Equipment',
+          videoUrl: 'https://www.youtube.com/watch?v=8JnfIjaLDO0',
+          duration: '2:00:00',
+          description: 'Plant layout design and equipment modeling'
+        },
+        {
+          title: 'Isometric Drawings and Reports',
+          videoUrl: 'https://www.youtube.com/watch?v=8oRjf8J42ZQ',
+          duration: '1:45:00',
+          description: 'Generating isometric drawings and project reports'
+        }
+      ]
+    }
+  },
+  {
+    id: 27,
+    title: 'E3D (AVEVA Everything 3D)',
+    author: 'The Constructor',
+    rating: 4.9,
+    reviews: 490,
+    price: 38,
+    classes: 25,
+    students: 225,
+    image: IMAGE_MAP['civil-engineering'],
+    bestSeller: true,
+    category: 'civil-engineering',
+    description: 'Advanced Plant & Structural Design',
+    content: {
+      sections: [
+        {
+          title: 'E3D Fundamentals',
+          videoUrl: 'https://www.youtube.com/watch?v=FPzI8pzSY1Y',
+          duration: '2:30:00',
+          description: 'Getting started with AVEVA Everything 3D'
+        },
+        {
+          title: 'Advanced Plant Design',
+          videoUrl: 'https://www.youtube.com/watch?v=k0U5jshOwB8',
+          duration: '2:30:00',
+          description: 'Advanced techniques for plant design'
+        },
+        {
+          title: 'Structural Design in E3D',
+          videoUrl: 'https://www.youtube.com/watch?v=8JnfIjaLDO0',
+          duration: '2:15:00',
+          description: 'Structural modeling and analysis integration'
+        },
+        {
+          title: 'Collaborative Design Workflows',
+          videoUrl: 'https://www.youtube.com/watch?v=8oRjf8J42ZQ',
+          duration: '1:45:00',
+          description: 'Multi-disciplinary design coordination'
+        }
+      ]
+    }
+  },
+  {
+    id: 28,
+    title: 'STAAD Pro',
+    author: 'CivilEngineeringAcademy',
+    rating: 4.7,
+    reviews: 420,
+    price: 28,
+    classes: 16,
+    students: 180,
+    image: IMAGE_MAP['civil-engineering'],
+    bestSeller: false,
+    category: 'civil-engineering',
+    content: {
+      sections: [
+        {
+          title: 'STAAD Pro Basics',
+          videoUrl: 'https://www.youtube.com/watch?v=5uDntDR5mbg',
+          duration: '2:30:00',
+          description: 'Introduction to STAAD Pro structural analysis'
+        },
+        {
+          title: 'Structural Modeling',
+          videoUrl: 'https://www.youtube.com/watch?v=2Pp_zx2APco',
+          duration: '2:00:00',
+          description: 'Creating structural models in STAAD Pro'
+        },
+        {
+          title: 'Analysis and Design',
+          videoUrl: 'https://www.youtube.com/watch?v=bv8Ow4xoHjk',
+          duration: '2:15:00',
+          description: 'Performing structural analysis and design'
+        },
+        {
+          title: 'Advanced Features',
+          videoUrl: 'https://www.youtube.com/watch?v=FPzI8pzSY1Y',
+          duration: '1:45:00',
+          description: 'Advanced analysis features and reporting'
+        }
+      ]
+    }
+  },
+  {
+    id: 29,
+    title: 'Quantity Survey',
+    author: 'TheCivilEngineer',
+    rating: 4.6,
+    reviews: 360,
+    price: 26,
+    classes: 14,
+    students: 150,
+    image: IMAGE_MAP['civil-engineering'],
+    bestSeller: false,
+    category: 'civil-engineering',
+    content: {
+      sections: [
+        {
+          title: 'Quantity Surveying Basics',
+          videoUrl: 'https://www.youtube.com/watch?v=bv8Ow4xoHjk',
+          duration: '2:00:00',
+          description: 'Fundamentals of quantity surveying'
+        },
+        {
+          title: 'Takeoff and Measurement',
+          videoUrl: 'https://www.youtube.com/watch?v=_1x6g_rZWaw',
+          duration: '1:45:00',
+          description: 'Quantity takeoff from drawings and specifications'
+        },
+        {
+          title: 'Cost Estimation',
+          videoUrl: 'https://www.youtube.com/watch?v=8JnfIjaLDO0',
+          duration: '1:30:00',
+          description: 'Cost estimation and rate analysis'
+        },
+        {
+          title: 'Bill of Quantities (BOQ)',
+          videoUrl: 'https://www.youtube.com/watch?v=8oRjf8J42ZQ',
+          duration: '1:20:00',
+          description: 'Preparing detailed BOQ and tender documents'
+        }
+      ]
+    }
+  },
+  {
+    id: 30,
+    title: 'Site Supervision',
+    author: 'The Constructor',
+    rating: 4.5,
+    reviews: 310,
+    price: 24,
+    classes: 13,
+    students: 140,
+    image: IMAGE_MAP['civil-engineering'],
+    bestSeller: false,
+    category: 'civil-engineering',
+    content: {
+      sections: [
+        {
+          title: 'Site Supervision Basics',
+          videoUrl: 'https://www.youtube.com/watch?v=FPzI8pzSY1Y',
+          duration: '2:00:00',
+          description: 'Fundamentals of construction site supervision'
+        },
+        {
+          title: 'Quality Control',
+          videoUrl: 'https://www.youtube.com/watch?v=k0U5jshOwB8',
+          duration: '1:45:00',
+          description: 'Quality control and assurance on construction sites'
+        },
+        {
+          title: 'Safety Management',
+          videoUrl: 'https://www.youtube.com/watch?v=8JnfIjaLDO0',
+          duration: '1:30:00',
+          description: 'Construction safety and site management'
+        },
+        {
+          title: 'Progress Monitoring',
+          videoUrl: 'https://www.youtube.com/watch?v=8oRjf8J42ZQ',
+          duration: '1:20:00',
+          description: 'Tracking and reporting construction progress'
+        }
+      ]
+    }
+  },
+  {
+    id: 31,
+    title: 'Building Design & Estimation',
+    author: 'CivilEngineeringAcademy',
+    rating: 4.8,
+    reviews: 470,
+    price: 30,
+    classes: 17,
+    students: 195,
+    image: IMAGE_MAP['civil-engineering'],
+    bestSeller: true,
+    category: 'civil-engineering',
+    content: {
+      sections: [
+        {
+          title: 'Building Design Principles',
+          videoUrl: 'https://www.youtube.com/watch?v=5uDntDR5mbg',
+          duration: '2:30:00',
+          description: 'Fundamental principles of building design'
+        },
+        {
+          title: 'Cost Estimation Methods',
+          videoUrl: 'https://www.youtube.com/watch?v=2Pp_zx2APco',
+          duration: '2:00:00',
+          description: 'Various methods for building cost estimation'
+        },
+        {
+          title: 'Material Planning',
+          videoUrl: 'https://www.youtube.com/watch?v=bv8Ow4xoHjk',
+          duration: '1:45:00',
+          description: 'Material requirement planning and procurement'
+        },
+        {
+          title: 'Project Estimation',
+          videoUrl: 'https://www.youtube.com/watch?v=FPzI8pzSY1Y',
+          duration: '1:30:00',
+          description: 'Complete project estimation and budgeting'
+        }
+      ]
+    }
+  },
 
   // Programming Courses
   {
