@@ -9,22 +9,22 @@ const Loader = () => (
       xmlns="http://www.w3.org/2000/svg"
     >
       <g>
-        <g transform-origin="50 50">
+        <g style={{ transformOrigin: '50px 50px' }}>
           <path
             d="M50,10 A40,40 0 0,1 90,50"
-            stroke="#7dd3fc"  // Light Blue
+            stroke="#7dd3fc"
             strokeWidth="6"
             fill="none"
           />
           <path
             d="M90,50 A40,40 0 0,1 50,90"
-            stroke="#fb923c"  // Orange
+            stroke="#fb923c"
             strokeWidth="6"
             fill="none"
           />
           <path
             d="M50,90 A40,40 0 0,1 10,50"
-            stroke="#fdba74"  // Light Orange
+            stroke="#fdba74"
             strokeWidth="6"
             fill="none"
           />

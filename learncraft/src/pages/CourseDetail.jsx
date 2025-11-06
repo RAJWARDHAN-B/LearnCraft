@@ -6,6 +6,59 @@ import courses from "../data/courses";
 
 const YOUTUBE_PLACEHOLDER = "https://www.youtube.com/embed/dQw4w9WgXcQ?si=czLfRnLSX70mDgAr";
 
+// Function to convert any YouTube URL format to embed URL
+const convertToEmbedUrl = (url) => {
+  if (!url || typeof url !== 'string') return YOUTUBE_PLACEHOLDER;
+  
+  // If already an embed URL, return as is (but ensure it's properly formatted)
+  if (url.includes('/embed/')) {
+    // Ensure it has the proper domain
+    if (url.startsWith('http')) {
+      return url;
+    }
+    return `https://www.youtube.com${url.startsWith('/') ? '' : '/'}${url}`;
+  }
+  
+  let videoId = '';
+  
+  try {
+    // Handle different YouTube URL formats
+    if (url.includes('youtu.be/')) {
+      // Format: https://youtu.be/VIDEO_ID?si=... or https://youtu.be/VIDEO_ID
+      const match = url.match(/youtu\.be\/([a-zA-Z0-9_-]{11})/);
+      if (match && match[1]) {
+        videoId = match[1];
+      }
+    } else if (url.includes('youtube.com/watch')) {
+      // Format: https://www.youtube.com/watch?v=VIDEO_ID or https://youtube.com/watch?v=VIDEO_ID
+      const match = url.match(/[?&]v=([a-zA-Z0-9_-]{11})/);
+      if (match && match[1]) {
+        videoId = match[1];
+      }
+    } else if (url.includes('youtube.com/live/')) {
+      // Format: https://www.youtube.com/live/VIDEO_ID?si=...
+      // For live videos, we need to use the live embed format
+      const match = url.match(/youtube\.com\/live\/([a-zA-Z0-9_-]+)/);
+      if (match && match[1]) {
+        return `https://www.youtube.com/embed/${match[1]}`;
+      }
+    } else if (url.includes('youtube.com/embed/')) {
+      // Already embed format
+      return url.startsWith('http') ? url : `https://www.youtube.com${url.startsWith('/') ? '' : '/'}${url}`;
+    }
+    
+    if (videoId) {
+      // Build embed URL with proper parameters
+      return `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`;
+    }
+  } catch (error) {
+    console.error('Error converting YouTube URL:', error);
+  }
+  
+  // If we can't parse it, return placeholder
+  return YOUTUBE_PLACEHOLDER;
+};
+
 const STORAGE_KEY = "learncraft_watched_videos";
 
 const CourseDetail = () => {
@@ -15,6 +68,7 @@ const CourseDetail = () => {
   const [selectedIdx, setSelectedIdx] = useState(0);
   const [watched, setWatched] = useState([]);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [videoError, setVideoError] = useState(false);
   const DEFAULT_IMAGE = "https://farm3.staticflickr.com/2936/14765026726_b8a02d3989.jpg";
   const course = courses.find(c => c.id === parseInt(id));
 
@@ -39,6 +93,8 @@ const CourseDetail = () => {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
       return updated;
     });
+    // Reset video error when changing videos
+    setVideoError(false);
   }, [selectedIdx, id, course]);
 
   if (loading) return <Loader />;
@@ -135,14 +191,44 @@ const CourseDetail = () => {
         <div className="w-full max-w-4xl aspect-w-16 aspect-h-9 mb-6 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl bg-black border-2 sm:border-4 border-blue-200 dark:border-yellow-400"
           style={{ minHeight: '180px', maxHeight: '60vw', height: 'auto' }}>
           {courseList[selectedIdx] ? (
-            <iframe
-              src={courseList[selectedIdx].videoUrl ? courseList[selectedIdx].videoUrl.replace('watch?v=', 'embed/') : YOUTUBE_PLACEHOLDER}
-              title={courseList[selectedIdx].title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-full h-full min-h-[180px] sm:min-h-[220px] md:min-h-[400px]"
-              style={{ borderRadius: '1.25rem' }}
-            ></iframe>
+            videoError ? (
+              <div className="w-full h-full min-h-[180px] sm:min-h-[220px] md:min-h-[400px] flex flex-col items-center justify-center bg-gray-800 text-white p-4">
+                <Play size={48} className="mx-auto mb-4 opacity-50" />
+                <p className="text-center mb-4">Unable to load video. Please try watching on YouTube.</p>
+                {courseList[selectedIdx].videoUrl && (
+                  <a
+                    href={courseList[selectedIdx].videoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors flex items-center gap-2"
+                  >
+                    <ExternalLink size={20} />
+                    Watch on YouTube
+                  </a>
+                )}
+              </div>
+            ) : (
+              <iframe
+                src={convertToEmbedUrl(courseList[selectedIdx].videoUrl)}
+                title={courseList[selectedIdx].title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full min-h-[180px] sm:min-h-[220px] md:min-h-[400px]"
+                style={{ borderRadius: '1.25rem', border: 'none' }}
+                onError={() => setVideoError(true)}
+                onLoad={(e) => {
+                  // Check if iframe loaded successfully
+                  try {
+                    const iframe = e.target;
+                    // If we can't access the iframe content (cross-origin), assume it loaded
+                    // The error will be shown by YouTube itself if there's an issue
+                    setVideoError(false);
+                  } catch (err) {
+                    // Cross-origin restrictions - this is normal, video should still work
+                  }
+                }}
+              ></iframe>
+            )
           ) : (
             <div className="w-full h-full min-h-[180px] sm:min-h-[220px] md:min-h-[400px] flex items-center justify-center bg-gray-800 text-white">
               <div className="text-center">
