@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 import { 
   MapPin, 
   Phone, 
@@ -11,7 +12,8 @@ import {
   Users,
   Award,
   Target,
-  MessageSquare
+  MessageSquare,
+  Loader2
 } from "lucide-react";
 
 const AboutUs = () => {
@@ -25,8 +27,15 @@ const AboutUs = () => {
   });
 
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
+    // Initialize EmailJS with public key
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    if (publicKey) {
+      emailjs.init(publicKey);
+    }
+
     if (location.hash === "#contact") {
       setTimeout(() => {
         const element = document.getElementById("contact");
@@ -46,12 +55,35 @@ const AboutUs = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simulate form submission
-    setSubmitStatus("success");
-    setTimeout(() => {
-      setSubmitStatus(null);
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    // Validate environment variables
+    if (!serviceId || !templateId || !publicKey) {
+      setSubmitStatus("error");
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone || "Not provided",
+        subject: formData.subject,
+        message: formData.message,
+        to_email: "learncraftinstitute@gmail.com", // Your email address
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      
+      setSubmitStatus("success");
       setFormData({
         name: "",
         email: "",
@@ -59,7 +91,22 @@ const AboutUs = () => {
         subject: "",
         message: "",
       });
-    }, 3000);
+      
+      // Clear success message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus(null);
+      }, 5000);
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      setSubmitStatus("error");
+      
+      // Clear error message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus(null);
+      }, 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const fadeInUp = {
@@ -354,10 +401,20 @@ const AboutUs = () => {
 
                   <button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-yellow-400 dark:to-yellow-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-800 dark:hover:from-yellow-500 dark:hover:to-yellow-700 transition-all duration-200 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-700 dark:from-yellow-400 dark:to-yellow-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-800 dark:hover:from-yellow-500 dark:hover:to-yellow-700 transition-all duration-200 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <Send size={20} />
-                    Send Message
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 size={20} className="animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Send size={20} />
+                        Send Message
+                      </>
+                    )}
                   </button>
 
                   {submitStatus === "success" && (
@@ -366,7 +423,17 @@ const AboutUs = () => {
                       animate={{ opacity: 1, y: 0 }}
                       className="bg-green-100 dark:bg-green-900 border border-green-400 dark:border-green-600 text-green-700 dark:text-green-300 px-4 py-3 rounded-lg"
                     >
-                      Thank you! Your message has been sent successfully.
+                      Thank you! Your message has been sent successfully. We'll get back to you soon.
+                    </motion.div>
+                  )}
+
+                  {submitStatus === "error" && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="bg-red-100 dark:bg-red-900 border border-red-400 dark:border-red-600 text-red-700 dark:text-red-300 px-4 py-3 rounded-lg"
+                    >
+                      Oops! Something went wrong. Please check your EmailJS configuration or try again later. You can also contact us directly at learncraftinstitute@gmail.com
                     </motion.div>
                   )}
                 </form>
