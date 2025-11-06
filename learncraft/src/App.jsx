@@ -7,6 +7,7 @@ import CompanyLogos from "./pages/CompanyLogos";
 import TrainingSection from "./pages/TrainingSection";
 import Blogs from "./pages/Blogs";
 import PopularCourses from "./pages/PopularCourses";
+import Categories from "./pages/Categories";
 import BlogDetail from "./pages/BlogsDetails";
 import Authors from "./pages/Authors";
 import Testimonials from "./pages/Testimonials";
@@ -33,6 +34,7 @@ const Home = () => (
   <div>
     <HeroSection />
     <CompanyLogos />
+    <Categories />
     <PopularCourses />
     <TrainingSection />
     <div id="authors"><Authors /></div>

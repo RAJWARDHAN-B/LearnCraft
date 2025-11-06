@@ -1,6 +1,5 @@
 import React from "react";
 import linkedinIcon from "../assets/linkedin.svg";
-import dataanalystImage from "../../public/dataanalyst.jpeg";
 import { Helmet } from "react-helmet-async";
 
 const authors = [
@@ -9,7 +8,7 @@ const authors = [
     name: "Pravin More",
     title: "Founder & Civil Design Expert",
     description: "10+ years of experience in infrastructure projects, specializing in RCC detailing and civil engineering tools like Tekla and AutoCAD.",
-    image: dataanalystImage,
+    image: "/pravinmore.jpeg",
     linkedin: "https://www.linkedin.com/in/rajwardhan-bhandigare/",
   },
   {
@@ -17,23 +16,23 @@ const authors = [
     name: "Aishwarya Dhole",
     title: "HR & Communication Trainer",
     description: "Focused on spoken English, personality development, and empowering rural learners with soft skills and job-readiness training.",
-    image: dataanalystImage,
+    image: "/aishwaryadhole.jpeg",
     linkedin: "https://www.linkedin.com/in/rajwardhan-bhandigare/",
   },
   {
     id: 3,
-    name: "Priyanka K.",
+    name: "Priyanka Bhise",
     title: "Digital Marketing Strategist",
     description: "Expert in SEO, Meta Ads, and AI-driven tools. She mentors students to manage real digital campaigns and build freelance careers.",
-    image: dataanalystImage,
+    image: "/priyankabhise.jpeg",
     linkedin: "https://www.linkedin.com/in/rajwardhan-bhandigare/",
   },
   {
     id: 4,
-    name: "Pooja More",
+    name: "Pooja Handibag",
     title: "Computer & Accounting Instructor",
     description: "Trained hundreds of rural students in Tally, MS Office, and basic computer skills, helping them become digitally literate.",
-    image: dataanalystImage,
+    image: "/poojahandibag.jpeg",
     linkedin: "https://www.linkedin.com/in/rajwardhan-bhandigare/",
   },
   {
@@ -41,7 +40,7 @@ const authors = [
     name: "Suraj Panchal",
     title: "Animation & Design Mentor",
     description: "Skilled in graphic design, 2D/3D animation, and visual storytelling. Guides creative learners into the media and design industry.",
-    image: dataanalystImage,
+    image: "/surajpanchal.jpeg",
     linkedin: "https://www.linkedin.com/in/rajwardhan-bhandigare/",
   },
 ];
@@ -75,7 +74,7 @@ const Authors = () => {
                     <img
                       src={author.image}
                       alt={author.name}
-                      className="w-24 h-24 object-cover rounded-full border-4 border-blue-200 shadow-md"
+                      className="w-24 h-24 object-cover object-[center_60%] rounded-full border-4 border-blue-200 shadow-md"
                     />
                     <a
                       href={author.linkedin}

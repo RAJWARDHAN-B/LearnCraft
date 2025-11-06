@@ -1,15 +1,21 @@
 // Centralized course data for Learncraft
-import dataScience from '../assets/data-science.jpg';
-import digitalMarketing from '../assets/digital-marketing.jpg';
-import civilEngineering from '../assets/civil-engineering.jpg';
 
-const IMAGE_MAP = {
-  'data-science': dataScience,
-  'digital-marketing': digitalMarketing,
-  'civil-engineering': civilEngineering,
-  'programming': 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=60',
-  'finance': 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=60',
-  'design': 'https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=400&q=60',
+// Image sets for each category (images are in public folder)
+const IMAGE_SETS = {
+  'data-science': ['/data1.jpg', '/data2.jpg', '/data3.jpg'],
+  'digital-marketing': ['/marketing1.jpg', '/marketing2.jpg', '/marketing3.jpg'],
+  'civil-engineering': ['/civil1.jpg', '/civil2.jpg', '/civil3.jpg'],
+  'rural': ['/rural1.jpg', '/rural2.jpg', '/rural3.jpg'],
+  'programming': ['/data1.jpg', '/data2.jpg', '/data3.jpg'], // Using data images for programming
+  'finance': ['/data1.jpg', '/data2.jpg', '/data3.jpg'], // Using data images for finance
+  'design': ['/marketing1.jpg', '/marketing2.jpg', '/marketing3.jpg'], // Using marketing images for design
+};
+
+// Function to get a random image from a category's image set
+const getRandomImage = (category) => {
+  const imageSet = IMAGE_SETS[category] || IMAGE_SETS['data-science']; // Default to data-science if category not found
+  const randomIndex = Math.floor(Math.random() * imageSet.length);
+  return imageSet[randomIndex];
 };
 
 const courses = [
@@ -23,7 +29,6 @@ const courses = [
     price: 20,
     classes: 12,
     students: 150,
-    image: IMAGE_MAP['data-science'],
     bestSeller: true,
     category: 'data-science',
     content: {
@@ -64,7 +69,6 @@ const courses = [
     price: 25,
     classes: 15,
     students: 220,
-    image: IMAGE_MAP['data-science'],
     bestSeller: true,
     category: 'data-science',
     content: {
@@ -105,7 +109,6 @@ const courses = [
     price: 18,
     classes: 10,
     students: 340,
-    image: IMAGE_MAP['data-science'],
     bestSeller: false,
     category: 'data-science',
     content: {
@@ -146,7 +149,6 @@ const courses = [
     price: 30,
     classes: 18,
     students: 180,
-    image: IMAGE_MAP['data-science'],
     bestSeller: false,
     category: 'data-science',
     content: {
@@ -189,7 +191,6 @@ const courses = [
     price: 20,
     classes: 12,
     students: 130,
-    image: IMAGE_MAP['digital-marketing'],
     bestSeller: true,
     category: 'digital-marketing',
     content: {
@@ -230,7 +231,6 @@ const courses = [
     price: 15,
     classes: 8,
     students: 280,
-    image: IMAGE_MAP['digital-marketing'],
     bestSeller: false,
     category: 'digital-marketing',
     content: {
@@ -271,7 +271,6 @@ const courses = [
     price: 22,
     classes: 14,
     students: 190,
-    image: IMAGE_MAP['digital-marketing'],
     bestSeller: true,
     category: 'digital-marketing',
     content: {
@@ -312,7 +311,6 @@ const courses = [
     price: 18,
     classes: 10,
     students: 150,
-    image: IMAGE_MAP['digital-marketing'],
     bestSeller: false,
     category: 'digital-marketing',
     content: {
@@ -355,7 +353,6 @@ const courses = [
     price: 20,
     classes: 12,
     students: 120,
-    image: IMAGE_MAP['civil-engineering'],
     bestSeller: true,
     category: 'civil-engineering',
     content: {
@@ -396,7 +393,6 @@ const courses = [
     price: 28,
     classes: 16,
     students: 95,
-    image: IMAGE_MAP['civil-engineering'],
     bestSeller: false,
     category: 'civil-engineering',
     content: {
@@ -437,7 +433,6 @@ const courses = [
     price: 24,
     classes: 13,
     students: 85,
-    image: IMAGE_MAP['civil-engineering'],
     bestSeller: false,
     category: 'civil-engineering',
     content: {
@@ -478,7 +473,6 @@ const courses = [
     price: 25,
     classes: 15,
     students: 280,
-    image: IMAGE_MAP['civil-engineering'],
     bestSeller: true,
     category: 'civil-engineering',
     description: '2D & 3D Drafting for Civil & Mechanical Design',
@@ -520,7 +514,6 @@ const courses = [
     price: 30,
     classes: 18,
     students: 195,
-    image: IMAGE_MAP['civil-engineering'],
     bestSeller: true,
     category: 'civil-engineering',
     content: {
@@ -561,7 +554,6 @@ const courses = [
     price: 22,
     classes: 12,
     students: 165,
-    image: IMAGE_MAP['civil-engineering'],
     bestSeller: false,
     category: 'civil-engineering',
     content: {
@@ -602,7 +594,6 @@ const courses = [
     price: 32,
     classes: 20,
     students: 210,
-    image: IMAGE_MAP['civil-engineering'],
     bestSeller: true,
     category: 'civil-engineering',
     content: {
@@ -643,7 +634,6 @@ const courses = [
     price: 35,
     classes: 22,
     students: 245,
-    image: IMAGE_MAP['civil-engineering'],
     bestSeller: true,
     category: 'civil-engineering',
     description: 'Industrial Piping & Plant Design',
@@ -685,7 +675,6 @@ const courses = [
     price: 38,
     classes: 25,
     students: 225,
-    image: IMAGE_MAP['civil-engineering'],
     bestSeller: true,
     category: 'civil-engineering',
     description: 'Advanced Plant & Structural Design',
@@ -727,7 +716,6 @@ const courses = [
     price: 28,
     classes: 16,
     students: 180,
-    image: IMAGE_MAP['civil-engineering'],
     bestSeller: false,
     category: 'civil-engineering',
     content: {
@@ -768,7 +756,6 @@ const courses = [
     price: 26,
     classes: 14,
     students: 150,
-    image: IMAGE_MAP['civil-engineering'],
     bestSeller: false,
     category: 'civil-engineering',
     content: {
@@ -809,7 +796,6 @@ const courses = [
     price: 24,
     classes: 13,
     students: 140,
-    image: IMAGE_MAP['civil-engineering'],
     bestSeller: false,
     category: 'civil-engineering',
     content: {
@@ -850,7 +836,6 @@ const courses = [
     price: 30,
     classes: 17,
     students: 195,
-    image: IMAGE_MAP['civil-engineering'],
     bestSeller: true,
     category: 'civil-engineering',
     content: {
@@ -893,7 +878,6 @@ const courses = [
     price: 16,
     classes: 12,
     students: 450,
-    image: IMAGE_MAP['programming'],
     bestSeller: true,
     category: 'programming',
     content: {
@@ -934,7 +918,6 @@ const courses = [
     price: 22,
     classes: 15,
     students: 320,
-    image: IMAGE_MAP['programming'],
     bestSeller: true,
     category: 'programming',
     content: {
@@ -975,7 +958,6 @@ const courses = [
     price: 20,
     classes: 14,
     students: 180,
-    image: IMAGE_MAP['programming'],
     bestSeller: false,
     category: 'programming',
     content: {
@@ -1016,7 +998,6 @@ const courses = [
     price: 18,
     classes: 11,
     students: 290,
-    image: IMAGE_MAP['programming'],
     bestSeller: false,
     category: 'programming',
     content: {
@@ -1059,7 +1040,6 @@ const courses = [
     price: 14,
     classes: 8,
     students: 220,
-    image: IMAGE_MAP['finance'],
     bestSeller: false,
     category: 'finance',
     content: {
@@ -1100,7 +1080,6 @@ const courses = [
     price: 26,
     classes: 12,
     students: 140,
-    image: IMAGE_MAP['finance'],
     bestSeller: true,
     category: 'finance',
     content: {
@@ -1141,7 +1120,6 @@ const courses = [
     price: 32,
     classes: 16,
     students: 180,
-    image: IMAGE_MAP['finance'],
     bestSeller: false,
     category: 'finance',
     content: {
@@ -1184,7 +1162,6 @@ const courses = [
     price: 24,
     classes: 14,
     students: 260,
-    image: IMAGE_MAP['design'],
     bestSeller: true,
     category: 'design',
     content: {
@@ -1225,7 +1202,6 @@ const courses = [
     price: 20,
     classes: 12,
     students: 190,
-    image: IMAGE_MAP['design'],
     bestSeller: false,
     category: 'design',
     content: {
@@ -1266,7 +1242,6 @@ const courses = [
     price: 18,
     classes: 10,
     students: 150,
-    image: IMAGE_MAP['design'],
     bestSeller: false,
     category: 'design',
     content: {
@@ -1300,7 +1275,7 @@ const courses = [
   },
 ].map(course => ({
   ...course,
-  image: IMAGE_MAP[course.category] || course.image
+  image: getRandomImage(course.category)
 }));
 
 export default courses; 
