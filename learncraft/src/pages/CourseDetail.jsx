@@ -25,22 +25,24 @@ const convertToEmbedUrl = (url) => {
     // Handle different YouTube URL formats
     if (url.includes('youtu.be/')) {
       // Format: https://youtu.be/VIDEO_ID?si=... or https://youtu.be/VIDEO_ID
-      const match = url.match(/youtu\.be\/([a-zA-Z0-9_-]{11})/);
+      // Extract video ID (typically 11 chars, but can vary for shorts/live)
+      const match = url.match(/youtu\.be\/([a-zA-Z0-9_-]+)/);
       if (match && match[1]) {
-        videoId = match[1];
+        videoId = match[1].split('?')[0].split('&')[0]; // Remove query params
       }
     } else if (url.includes('youtube.com/watch')) {
       // Format: https://www.youtube.com/watch?v=VIDEO_ID or https://youtube.com/watch?v=VIDEO_ID
-      const match = url.match(/[?&]v=([a-zA-Z0-9_-]{11})/);
+      const match = url.match(/[?&]v=([a-zA-Z0-9_-]+)/);
       if (match && match[1]) {
-        videoId = match[1];
+        videoId = match[1].split('&')[0]; // Remove additional params
       }
     } else if (url.includes('youtube.com/live/')) {
       // Format: https://www.youtube.com/live/VIDEO_ID?si=...
-      // For live videos, we need to use the live embed format
+      // For live videos, use the embed format
       const match = url.match(/youtube\.com\/live\/([a-zA-Z0-9_-]+)/);
       if (match && match[1]) {
-        return `https://www.youtube.com/embed/${match[1]}`;
+        const liveId = match[1].split('?')[0].split('&')[0];
+        return `https://www.youtube.com/embed/${liveId}`;
       }
     } else if (url.includes('youtube.com/embed/')) {
       // Already embed format
