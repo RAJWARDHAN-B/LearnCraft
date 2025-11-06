@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Search, BarChart2, Megaphone, Building2, GraduationCap, Star, Users, Clock } from "lucide-react";
 import PopularCourses from "./PopularCourses";
+import Categories from "./Categories";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import courses from '../data/courses';
@@ -250,22 +251,7 @@ const Explore = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="max-w-7xl mx-auto px-2 sm:px-4 mt-10 sm:mt-16"
         >
-          <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-gray-900 dark:text-yellow-200">Categories</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 sm:gap-6">
-            {categories.map((cat, idx) => (
-              <motion.div
-                key={cat.name}
-                whileHover={{ scale: 1.08 }}
-                className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-4 sm:p-6 flex flex-col items-center justify-center cursor-pointer hover:bg-blue-50 dark:hover:bg-gray-700 transition"
-                onClick={() => navigate(`/category/${slugify(cat.name)}`)}
-                role="button"
-                tabIndex={0}
-              >
-                <span className="mb-2">{cat.icon}</span>
-                <span className="font-semibold text-gray-800 dark:text-yellow-200 text-center text-xs sm:text-sm">{cat.name}</span>
-              </motion.div>
-            ))}
-          </div>
+          <Categories />
         </motion.div>
 
         {/* Categories with Courses */}
