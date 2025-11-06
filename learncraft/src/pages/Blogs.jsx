@@ -24,7 +24,7 @@ const blogs = [
     id: "python-data-analysis-tutorial",
     title: "Python for Data Analysis: Essential Libraries and Techniques",
     desc: "Master Pandas, NumPy, and Matplotlib to analyze and visualize data effectively. This comprehensive tutorial includes hands-on examples and best practices for data professionals.",
-    img: "https://images.unsplash.com/photo-1526374965328-7f61d4a18d93?w=800&h=600&fit=crop",
+    img: "/pyfordablog.jpg",
     category: "Data Science",
     date: "January 5, 2025"
   },
@@ -41,7 +41,7 @@ const blogs = [
     id: "seo-optimization-guide",
     title: "Complete SEO Optimization Guide: Boost Your Website Rankings",
     desc: "Learn proven SEO techniques to improve your website's visibility. From keyword research to technical SEO, discover strategies that drive organic traffic and conversions.",
-    img: "https://images.unsplash.com/photo-1432888622747-4eb9a8f2d1c6?w=800&h=600&fit=crop",
+    img: "/seooptblog.jpg",
     category: "Digital Marketing",
     date: "January 8, 2025"
   },

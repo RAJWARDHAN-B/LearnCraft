@@ -136,7 +136,7 @@ const blogContent = {
   },
   "python-data-analysis-tutorial": {
     title: "Python for Data Analysis: Essential Libraries and Techniques",
-    img: "https://images.unsplash.com/photo-1526374965328-7f61d4a18d93?w=1200&h=600&fit=crop",
+    img: "/pyfordablog.jpg",
     category: "Data Science",
     date: "January 5, 2025",
     content: (
@@ -229,7 +229,7 @@ const blogContent = {
   },
   "seo-optimization-guide": {
     title: "Complete SEO Optimization Guide: Boost Your Website Rankings",
-    img: "https://images.unsplash.com/photo-1432888622747-4eb9a8f2d1c6?w=1200&h=600&fit=crop",
+    img: "/seooptblog.jpg",
     category: "Digital Marketing",
     date: "January 8, 2025",
     content: (
