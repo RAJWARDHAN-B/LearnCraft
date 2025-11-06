@@ -70,7 +70,7 @@ const CategoryCourses = () => {
                   >
                     <div className="relative">
                       <img
-                        src={DEFAULT_IMAGE}
+                        src={course.image || DEFAULT_IMAGE}
                         alt={course.title}
                         className="w-full h-36 xs:h-40 sm:h-48 object-cover transition-all duration-200"
                         loading="lazy"

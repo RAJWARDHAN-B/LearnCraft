@@ -35,25 +35,25 @@ const courses = [
       sections: [
         {
           title: 'Introduction to Data Science',
-          videoUrl: 'https://www.youtube.com/watch?v=ua-CiDNNj30',
+          videoUrl: 'https://youtu.be/ua-CiDNNj30?si=2Rspq--T6xNOnTgL',
           duration: '2:30:00',
           description: 'Complete overview of data science field and career paths'
         },
         {
           title: 'Data Cleaning & Preprocessing',
-          videoUrl: 'https://www.youtube.com/watch?v=zoJzmwD1Y8Y',
+          videoUrl: 'https://youtu.be/ua-CiDNNj30?si=2Rspq--T6xNOnTgL',
           duration: '1:45:00',
           description: 'Essential data cleaning techniques and preprocessing methods'
         },
         {
           title: 'Data Visualization',
-          videoUrl: 'https://www.youtube.com/watch?v=3G5Z6XYF2Z4',
+          videoUrl: 'https://youtu.be/ua-CiDNNj30?si=2Rspq--T6xNOnTgL',
           duration: '1:20:00',
           description: 'Creating compelling visualizations with Python and R'
         },
         {
           title: 'Statistical Analysis',
-          videoUrl: 'https://www.youtube.com/watch?v=xxpc-HPKN28',
+          videoUrl: 'https://youtu.be/ua-CiDNNj30?si=2Rspq--T6xNOnTgL',
           duration: '2:00:00',
           description: 'Fundamental statistical concepts and hypothesis testing'
         }
@@ -75,25 +75,25 @@ const courses = [
       sections: [
         {
           title: 'Introduction to Machine Learning',
-          videoUrl: 'https://www.youtube.com/watch?v=Cr6VqTRO1v0',
+          videoUrl: 'https://youtu.be/i_LwzRVP7bg?si=KrIgTBJX9sJkOC8c',
           duration: '3:00:00',
           description: 'Complete machine learning course from basics to advanced'
         },
         {
           title: 'Algorithms and Models',
-          videoUrl: 'https://www.youtube.com/watch?v=Gv9_4yMHFhI',
+          videoUrl: 'https://youtu.be/i_LwzRVP7bg?si=KrIgTBJX9sJkOC8c',
           duration: '2:15:00',
           description: 'Understanding different ML algorithms and model selection'
         },
         {
           title: 'Supervised Learning',
-          videoUrl: 'https://www.youtube.com/watch?v=7eh4d6sabA0',
+          videoUrl: 'https://youtu.be/i_LwzRVP7bg?si=KrIgTBJX9sJkOC8c',
           duration: '1:50:00',
           description: 'Regression and classification techniques'
         },
         {
           title: 'Unsupervised Learning',
-          videoUrl: 'https://www.youtube.com/watch?v=8p6XaQsIFvU',
+          videoUrl: 'https://youtu.be/i_LwzRVP7bg?si=KrIgTBJX9sJkOC8c',
           duration: '1:30:00',
           description: 'Clustering and dimensionality reduction'
         }
@@ -115,25 +115,25 @@ const courses = [
       sections: [
         {
           title: 'Python Libraries for Data Science',
-          videoUrl: 'https://www.youtube.com/watch?v=LHBE6Q9XlzI',
+          videoUrl: 'https://youtu.be/r-uOLxNrNk8?si=14c6szEySHyoBiD2',
           duration: '2:45:00',
           description: 'Complete Python data science tutorial'
         },
         {
           title: 'Pandas and NumPy',
-          videoUrl: 'https://www.youtube.com/watch?v=vmEHCJofslg',
+          videoUrl: 'https://youtu.be/r-uOLxNrNk8?si=14c6szEySHyoBiD2',
           duration: '2:00:00',
           description: 'Master Pandas for data manipulation and analysis'
         },
         {
           title: 'Data Analysis with Python',
-          videoUrl: 'https://www.youtube.com/watch?v=daefaLgNkw0',
+          videoUrl: 'https://youtu.be/r-uOLxNrNk8?si=14c6szEySHyoBiD2',
           duration: '1:30:00',
           description: 'Practical data analysis projects'
         },
         {
           title: 'Data Import and Export',
-          videoUrl: 'https://www.youtube.com/watch?v=ZyhVh-qRZPA',
+          videoUrl: 'https://youtu.be/r-uOLxNrNk8?si=14c6szEySHyoBiD2',
           duration: '1:15:00',
           description: 'Working with different data formats'
         }
@@ -155,25 +155,25 @@ const courses = [
       sections: [
         {
           title: 'Advanced Probability Theory',
-          videoUrl: 'https://www.youtube.com/watch?v=cKlnR-CB3tk',
+          videoUrl: 'https://youtu.be/Vfo5le26IhY?si=_TaLMhpj4OJiao1j',
           duration: '2:30:00',
           description: 'Advanced statistical concepts and probability distributions'
         },
         {
           title: 'Hypothesis Testing & Regression',
-          videoUrl: 'https://www.youtube.com/watch?v=9gF-JQXEZhA',
+          videoUrl: 'https://youtu.be/Vfo5le26IhY?si=_TaLMhpj4OJiao1j',
           duration: '2:00:00',
           description: 'Statistical inference and regression analysis'
         },
         {
           title: 'Bayesian Statistics',
-          videoUrl: 'https://www.youtube.com/watch?v=3OJEae7Qb_o',
+          videoUrl: 'https://youtu.be/Vfo5le26IhY?si=_TaLMhpj4OJiao1j',
           duration: '1:45:00',
           description: 'Introduction to Bayesian methods'
         },
         {
           title: 'Time Series Analysis',
-          videoUrl: 'https://www.youtube.com/watch?v=UFuo7EHI8zc',
+          videoUrl: 'https://youtu.be/Vfo5le26IhY?si=_TaLMhpj4OJiao1j',
           duration: '1:30:00',
           description: 'Analyzing temporal data patterns'
         }
@@ -480,25 +480,25 @@ const courses = [
       sections: [
         {
           title: 'AutoCAD Basics',
-          videoUrl: 'https://www.youtube.com/watch?v=5uDntDR5mbg',
+          videoUrl: 'https://youtu.be/2LumoE9KjoY?si=HXPkGmLqj6AoN1Qg',
           duration: '2:30:00',
           description: 'Introduction to AutoCAD interface and basic tools'
         },
         {
           title: '2D Drafting Techniques',
-          videoUrl: 'https://www.youtube.com/watch?v=2Pp_zx2APco',
+          videoUrl: 'https://youtu.be/2LumoE9KjoY?si=HXPkGmLqj6AoN1Qg',
           duration: '2:00:00',
           description: 'Mastering 2D drawing and drafting for civil engineering'
         },
         {
           title: '3D Modeling Fundamentals',
-          videoUrl: 'https://www.youtube.com/watch?v=bv8Ow4xoHjk',
+          videoUrl: 'https://youtu.be/2LumoE9KjoY?si=HXPkGmLqj6AoN1Qg',
           duration: '2:15:00',
           description: 'Creating 3D models for civil and mechanical design'
         },
         {
           title: 'Advanced AutoCAD Tools',
-          videoUrl: 'https://www.youtube.com/watch?v=FPzI8pzSY1Y',
+          videoUrl: 'https://youtu.be/2LumoE9KjoY?si=HXPkGmLqj6AoN1Qg',
           duration: '1:45:00',
           description: 'Advanced features for professional drafting'
         }
