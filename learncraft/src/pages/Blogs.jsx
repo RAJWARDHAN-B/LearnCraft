@@ -105,25 +105,21 @@ const blogs = [
   }
 ];
 
-const BlogCard = ({ id, title, desc, img, large, category, date }) => (
-  <div
-    className={`rounded-xl bg-white shadow-md transition hover:shadow-lg ${
-      large ? "lg:col-span-2 lg:row-span-2 p-6" : "p-4"
-    }`}
-  >
+const BlogCard = ({ id, title, desc, img, category, date }) => (
+  <div className="rounded-xl bg-white shadow-md transition hover:shadow-lg p-4 h-full flex flex-col">
     <img
       src={img}
       alt={title}
       className="rounded-xl w-full h-48 sm:h-56 md:h-64 object-cover"
       loading="lazy"
     />
-    <div className="mt-4">
+    <div className="mt-4 flex-grow flex flex-col">
       <span className="text-xs font-semibold text-blue-600 uppercase tracking-wide">{category}</span>
       <h3 className="mt-2 font-semibold text-lg sm:text-xl">{title}</h3>
-      {desc && <p className="text-sm text-gray-600 mt-2 line-clamp-3">{desc}</p>}
+      {desc && <p className="text-sm text-gray-600 mt-2 line-clamp-3 flex-grow">{desc}</p>}
       <p className="text-xs text-gray-500 mt-2">{date}</p>
-      <Link to={`/blog/${id}`}>
-        <button className="mt-4 inline-block text-black hover:text-blue-600 transition font-medium">
+      <Link to={`/blog/${id}`} className="mt-4">
+        <button className="inline-block text-black hover:text-blue-600 transition font-medium">
           Read More <span>→</span>
         </button>
       </Link>
@@ -140,29 +136,31 @@ const Blogs = () => {
         <meta property="og:title" content="Blog | Learncraft" />
         <meta property="og:description" content="Read inspiring stories, tips, and news from the Learncraft Training Institute blog." />
       </Helmet>
-      <div className="bg-gray-50 min-h-screen px-4 sm:px-6 md:px-10 py-8">
-        <header className="text-center mb-10">
-          <h1 className="text-3xl sm:text-4xl font-bold leading-tight text-gray-900">
-            Learncraft Training Institute Blog
-          </h1>
-          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-            Stay updated with the latest trends, tips, and insights in Data Science, Digital Marketing, Civil Engineering, and Rural Development.
-          </p>
-        </header>
+      <div className="bg-gray-50 min-h-screen px-4 sm:px-6 md:px-8 py-8">
+        <div className="max-w-7xl mx-auto">
+          <header className="text-center mb-10">
+            <h1 className="text-3xl sm:text-4xl font-bold leading-tight text-gray-900">
+              Learncraft Training Institute Blog
+            </h1>
+            <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+              Stay updated with the latest trends, tips, and insights in Data Science, Digital Marketing, Civil Engineering, and Rural Development.
+            </p>
+          </header>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {blogs.map((blog, idx) => (
-            <BlogCard key={idx} {...blog} large={idx===0} />
+            <BlogCard key={idx} {...blog} />
           ))}
-        </div>
+          </div>
 
-        <footer className="mt-16 border-t pt-8 text-center text-sm text-gray-500">
+          <footer className="mt-16 border-t pt-8 text-center text-sm text-gray-500">
           <p>©2025 Learncraft Training Institute. All Rights Reserved</p>
           <div className="flex flex-wrap justify-center gap-4 mt-4">
             <a href="#" className="hover:underline">Privacy Policy</a>
             <a href="#" className="hover:underline">Terms & Conditions</a>
           </div>
-        </footer>
+          </footer>
+        </div>
       </div>
     </>
   );

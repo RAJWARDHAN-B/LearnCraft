@@ -603,7 +603,7 @@ const BlogDetail = () => {
         <meta property="og:title" content={`${blog.title} | Learncraft Blog`} />
         <meta property="og:description" content={`Read: ${blog.title} on the Learncraft blog.`} />
       </Helmet>
-      <div className="px-4 sm:px-6 md:px-10 py-6 max-w-5xl mx-auto">
+      <div className="px-4 sm:px-6 md:px-8 py-6 max-w-4xl mx-auto">
         <Link to="/blog" className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-6">
           <ArrowLeft className="mr-2" size={20} />
           Back to Blog
