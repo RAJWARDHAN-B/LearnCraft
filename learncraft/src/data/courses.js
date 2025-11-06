@@ -359,25 +359,25 @@ const courses = [
       sections: [
         {
           title: 'Introduction to Civil Engineering',
-          videoUrl: 'https://www.youtube.com/watch?v=5uDntDR5mbg',
+          videoUrl: 'https://youtu.be/LCyZFTEyNoo?si=LhCFjPjwW-ofUuLb',
           duration: '2:00:00',
           description: 'Fundamental principles of civil engineering'
         },
         {
           title: 'Materials & Construction Basics',
-          videoUrl: 'https://www.youtube.com/watch?v=2Pp_zx2APco',
+          videoUrl: 'https://youtu.be/LCyZFTEyNoo?si=LhCFjPjwW-ofUuLb',
           duration: '1:45:00',
           description: 'Construction materials and their properties'
         },
         {
           title: 'Structural Design Principles',
-          videoUrl: 'https://www.youtube.com/watch?v=bv8Ow4xoHjk',
+          videoUrl: 'https://youtu.be/LCyZFTEyNoo?si=LhCFjPjwW-ofUuLb',
           duration: '2:15:00',
           description: 'Basic structural design concepts'
         },
         {
           title: 'Surveying and Site Planning',
-          videoUrl: 'https://www.youtube.com/watch?v=FPzI8pzSY1Y',
+          videoUrl: 'https://youtu.be/LCyZFTEyNoo?si=LhCFjPjwW-ofUuLb',
           duration: '1:30:00',
           description: 'Land surveying and site preparation'
         }
@@ -399,25 +399,25 @@ const courses = [
       sections: [
         {
           title: 'Structural Theory & Applications',
-          videoUrl: 'https://www.youtube.com/watch?v=bv8Ow4xoHjk',
+          videoUrl: 'https://www.youtube.com/live/1Zdrs1qp7Sk?si=ASZ3QLFEUUseI-cI',
           duration: '2:30:00',
           description: 'Advanced structural analysis methods'
         },
         {
           title: 'Load Distribution & Mechanics',
-          videoUrl: 'https://www.youtube.com/watch?v=_1x6g_rZWaw',
+          videoUrl: 'https://www.youtube.com/live/1Zdrs1qp7Sk?si=ASZ3QLFEUUseI-cI',
           duration: '2:00:00',
           description: 'Advanced structural mechanics and load analysis'
         },
         {
           title: 'Finite Element Analysis',
-          videoUrl: 'https://www.youtube.com/watch?v=8JnfIjaLDO0',
+          videoUrl: 'https://www.youtube.com/live/1Zdrs1qp7Sk?si=ASZ3QLFEUUseI-cI',
           duration: '1:45:00',
           description: 'Computer-aided structural analysis'
         },
         {
           title: 'Bridge and Building Design',
-          videoUrl: 'https://www.youtube.com/watch?v=8oRjf8J42ZQ',
+          videoUrl: 'https://www.youtube.com/live/1Zdrs1qp7Sk?si=ASZ3QLFEUUseI-cI',
           duration: '1:30:00',
           description: 'Practical structural design applications'
         }
@@ -520,25 +520,25 @@ const courses = [
       sections: [
         {
           title: 'Revit Architecture Introduction',
-          videoUrl: 'https://www.youtube.com/watch?v=bv8Ow4xoHjk',
+          videoUrl: 'https://youtu.be/zKieFqP9-0I?si=isyUiFLJThnC5OM3',
           duration: '2:30:00',
           description: 'Getting started with Revit Architecture'
         },
         {
           title: 'Building Information Modeling (BIM)',
-          videoUrl: 'https://www.youtube.com/watch?v=_1x6g_rZWaw',
+          videoUrl: 'https://youtu.be/zKieFqP9-0I?si=isyUiFLJThnC5OM3',
           duration: '2:00:00',
           description: 'Understanding BIM concepts and workflows'
         },
         {
           title: 'Creating Architectural Models',
-          videoUrl: 'https://www.youtube.com/watch?v=8JnfIjaLDO0',
+          videoUrl: 'https://youtu.be/zKieFqP9-0I?si=isyUiFLJThnC5OM3',
           duration: '2:15:00',
           description: 'Building detailed architectural models in Revit'
         },
         {
           title: 'Documentation and Rendering',
-          videoUrl: 'https://www.youtube.com/watch?v=8oRjf8J42ZQ',
+          videoUrl: 'https://youtu.be/zKieFqP9-0I?si=isyUiFLJThnC5OM3',
           duration: '1:45:00',
           description: 'Generating construction documents and visualizations'
         }
